@@ -2,3 +2,5 @@ User-agent: *
 Disallow:
 
 Sitemap: https://train.licence-info.com/sitemap.xml
+
+#DaumWebMasterTool:7bf4a4099546a89868aeddaa0d93c14a4a77fdddbb72eb28318dfe412c6c5f8f:1M5/FqJ8NuMbKOhP77d7Rw==
