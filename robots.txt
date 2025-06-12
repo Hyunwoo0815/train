@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://time.guide-lee.co.kr/sitemap.xml
+
+#DaumWebMasterTool:9f640beadb1b7ea7169b2940c954af839d4b7393c25592bf536d036ab56885d5:Z83/x3OTz46mxKLsz35vQg==
