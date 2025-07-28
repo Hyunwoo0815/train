@@ -596,13 +596,13 @@
         ];
 
         // 전체 역 렌더링 (모든 역 포함) - 한국어 URL 형태로 변경
+        // 전체 역 렌더링 (모든 역 포함) - 한국어 URL 형태로 변경
         function renderAllStations() {
             const container = document.getElementById('allStationsList');
             
             container.innerHTML = allStations.map((station, index) => {
-                // 역명에서 '역' 제거하고 URL 형태로 변환
-                const stationName = station.replace('역', '');
-                const urlPath = `/${stationName}에서-출발하는-열차시간표`;
+                // URL 경로는 전체 역명 사용 (예: 경주역에서-출발하는-열차시간표)
+                const urlPath = `/${station}에서-출발하는-열차시간표`;
                 
                 return `
                 <div class="station-item" style="--i: ${index}" data-station="${station}">
