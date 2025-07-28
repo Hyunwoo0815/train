@@ -253,8 +253,35 @@
         color: white;
     }
 
-    .major-station-item::before {
+    .region-list {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .region-item {
+        background: linear-gradient(135deg, var(--secondary-color) 0%, #10b981 100%);
+        color: white;
+        border: none;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .region-item .station-link {
+        color: white;
+        font-weight: 600;
+        font-size: 1.15rem;
+        padding: var(--spacing-lg);
+    }
+
+    .region-item .station-link:hover {
+        background: rgba(255,255,255,0.15);
+        color: white;
+    }
+
+    .region-item::before {
         background: rgba(255,255,255,0.3) !important;
+    }
+
+    .region-item:hover .station-link::before {
+        transform: scaleY(1);
     }
 
     .stats-grid {
@@ -477,7 +504,43 @@
         </div>
 
         <section>
-            <h2 class="section-title">🗺️ 전체 기차역 목록</h2>
+            <h2 class="section-title">🗺️ 권역별 열차시간표</h2>
+            <div class="stations-list region-list">
+                <div class="station-item region-item">
+                    <a href="/수도권에서-출발하는-열차시간표" class="station-link" aria-label="수도권 지역 열차시간표 보기">
+                        <span class="station-icon">🏙️</span>
+                        <span class="station-name">수도권 출발 열차시간표</span>
+                    </a>
+                </div>
+                <div class="station-item region-item">
+                    <a href="/충청권에서-출발하는-열차시간표" class="station-link" aria-label="충청권 지역 열차시간표 보기">
+                        <span class="station-icon">🏞️</span>
+                        <span class="station-name">충청권 출발 열차시간표</span>
+                    </a>
+                </div>
+                <div class="station-item region-item">
+                    <a href="/강원권에서-출발하는-열차시간표" class="station-link" aria-label="강원권 지역 열차시간표 보기">
+                        <span class="station-icon">⛰️</span>
+                        <span class="station-name">강원권 출발 열차시간표</span>
+                    </a>
+                </div>
+                <div class="station-item region-item">
+                    <a href="/전라권에서-출발하는-열차시간표" class="station-link" aria-label="전라권 지역 열차시간표 보기">
+                        <span class="station-icon">🌾</span>
+                        <span class="station-name">전라권 출발 열차시간표</span>
+                    </a>
+                </div>
+                <div class="station-item region-item">
+                    <a href="/경상권에서-출발하는-열차시간표" class="station-link" aria-label="경상권 지역 열차시간표 보기">
+                        <span class="station-icon">🏮</span>
+                        <span class="station-name">경상권 출발 열차시간표</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">🚉 전체 기차역 목록</h2>
             <div class="stations-list" id="allStationsList">
                 <!-- 모든 역들이 여기에 들어갑니다 -->
             </div>
@@ -487,9 +550,9 @@
             <h2 class="cta-title">🎫 지금 바로 기차표 예매하세요!</h2>
             <p class="cta-desc">원하는 역의 시간표를 확인하신 후, 공식 예매 사이트에서 안전하게 예약하세요</p>
             <div class="cta-buttons">
-                <a href="https://www.letskorail.com" class="cta-button" target="_blank" rel="noopener">코레일톡 예매</a>
-                <a href="https://etk.srail.kr" class="cta-button" target="_blank" rel="noopener">SRT 예매</a>
-                <a href="https://www.korail.com" class="cta-button" target="_blank" rel="noopener">코레일 홈페이지</a>
+                <a href="https://www.letskorail.com" class="cta-button" rel="noopener">코레일톡 예매</a>
+                <a href="https://etk.srail.kr" class="cta-button" rel="noopener">SRT 예매</a>
+                <a href="https://www.korail.com" class="cta-button" rel="noopener">코레일 홈페이지</a>
             </div>
         </section>
 
@@ -532,18 +595,24 @@
             '후포역', '흑석리역'
         ];
 
-        // 전체 역 렌더링 (모든 역 포함)
+        // 전체 역 렌더링 (모든 역 포함) - 한국어 URL 형태로 변경
         function renderAllStations() {
             const container = document.getElementById('allStationsList');
             
-            container.innerHTML = allStations.map((station, index) => `
+            container.innerHTML = allStations.map((station, index) => {
+                // 역명에서 '역' 제거하고 URL 형태로 변환
+                const stationName = station.replace('역', '');
+                const urlPath = `/${stationName}에서-출발하는-열차시간표`;
+                
+                return `
                 <div class="station-item" style="--i: ${index}" data-station="${station}">
-                    <a href="/열차시간표/${station}" class="station-link" aria-label="${station} 출발 열차시간표 보기">
+                    <a href="${urlPath}" class="station-link" aria-label="${station} 출발 열차시간표 보기">
                         <span class="station-icon">🚉</span>
                         <span class="station-name">${station} 출발 열차시간표</span>
                     </a>
                 </div>
-            `).join('');
+                `;
+            }).join('');
         }
 
         // 스크롤 이벤트로 애니메이션 최적화
@@ -707,7 +776,7 @@
       },
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://train.medilocator.co.kr/열차시간표/{search_term_string}",
+        "target": "https://train.medilocator.co.kr/{search_term_string}에서-출발하는-열차시간표",
         "query-input": "required name=search_term_string"
       },
       "mainEntity": {
