@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+
+# 주요 페이지 패턴
+Allow: /*에서-*-가는-열차시간표
+Allow: /*에서-출발하는-열차시간표
+Allow: /*권에서-출발하는-열차시간표
+
+# Sitemap 위치
+Sitemap: https://train.medilocator.co.kr/sitemap.xml
+
+# 크롤링 지연 시간
+Crawl-delay: 1
+
+# 검색엔진별 설정
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: NaverBot
+Allow: /
+
+User-agent: DaumBot
+Allow: /
+
+User-agent: YetiBot
+Allow: /
