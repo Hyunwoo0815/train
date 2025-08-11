@@ -120,37 +120,19 @@ jobs:
         find . -maxdepth 1 \( -name "*.html" -o -name "*역" -o -name "*시간표" \) -type f | head -10
         echo ""
         
-        # meta.json 복원 (발행일 유지)
-        if [ -f "meta.json.backup" ]; then
+        # meta.json 복원 (jq 사용)
+        if [ -f "meta.json.backup" ] && [ -f "meta.json" ]; then
           echo "📋 기존 meta.json 발행일 정보 복원 중..."
           
-          # Python으로 발행일 정보만 복원
-          python3 -c "
-import json
-import os
-
-backup_file = 'meta.json.backup'
-current_file = 'meta.json'
-
-if os.path.exists(backup_file) and os.path.exists(current_file):
-    try:
-        with open(backup_file, 'r', encoding='utf-8') as f:
-            backup_data = json.load(f)
-        with open(current_file, 'r', encoding='utf-8') as f:
-            current_data = json.load(f)
-        
-        # 발행일 정보가 있으면 유지
-        if 'published_date' in backup_data:
-            current_data['published_date'] = backup_data['published_date']
-            
-        with open(current_file, 'w', encoding='utf-8') as f:
-            json.dump(current_data, f, ensure_ascii=False, indent=2)
-        print('✅ 발행일 정보 복원 완료')
-    except Exception as e:
-        print('⚠️ 발행일 정보 복원 실패: ' + str(e))
-else:
-    print('ℹ️ 백업 또는 현재 meta.json 없음')
-"
+          # jq로 발행일 정보 복사
+          if jq -e '.published_date' meta.json.backup > /dev/null 2>&1; then
+            published_date=$(jq -r '.published_date' meta.json.backup)
+            jq --arg date "$published_date" '.published_date = $date' meta.json > meta.json.tmp
+            mv meta.json.tmp meta.json
+            echo "✅ 발행일 정보 복원 완료"
+          else
+            echo "ℹ️ 백업에 발행일 정보 없음"
+          fi
           
           # 백업 파일 정리
           rm -f meta.json.backup
