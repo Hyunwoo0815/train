@@ -89,7 +89,7 @@ jobs:
         SITE_BASE_URL: https://train.medilocator.co.kr
         USE_HTML_EXTENSION: ${{ github.event.inputs.use_html_extension || 'false' }}
         TARGET_STATION: ${{ github.event.inputs.target_station }}
-        OVERWRITE_MODE: true  # 덮어쓰기 모드 활성화
+        OVERWRITE_MODE: true
       run: |
         echo "🚀 허브 페이지 생성 시작 (덮어쓰기 모드)"
         echo "📂 입력 폴더: $INPUT_FOLDER"
@@ -124,7 +124,7 @@ jobs:
         if [ -f "meta.json.backup" ]; then
           echo "📋 기존 meta.json 발행일 정보 복원 중..."
           
-          # Python으로 발행일 정보만 복원 (있는 경우)
+          # Python으로 발행일 정보만 복원
           python3 -c "
 import json
 import os
@@ -146,11 +146,11 @@ if os.path.exists(backup_file) and os.path.exists(current_file):
         with open(current_file, 'w', encoding='utf-8') as f:
             json.dump(current_data, f, ensure_ascii=False, indent=2)
         print('✅ 발행일 정보 복원 완료')
-    except:
-        print('⚠️ 발행일 정보 복원 실패 - 새 파일 사용')
+    except Exception as e:
+        print('⚠️ 발행일 정보 복원 실패: ' + str(e))
 else:
     print('ℹ️ 백업 또는 현재 meta.json 없음')
-" || echo "⚠️ 발행일 복원 스크립트 실행 실패"
+"
           
           # 백업 파일 정리
           rm -f meta.json.backup
