@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 파비콘 최적화 -->
+    <link rel="icon" sizes="32x32" type="image/png" href="favicon-32x32.png">
+    <link rel="icon" sizes="16x16" type="image/png" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <!-- 구글 애드센스 -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6101143022477538"
+     crossorigin="anonymous"></script>
+    
+    <!-- SEO 메타태그 - 2025 AI 시대 최적화 -->
+    <title>레일가이드 - 대한민국 1위 열차시간표 서비스 | KTX SRT 무궁화호 122개역 완벽 가이드</title>
+    <meta name="description" content="전국 122개 기차역 실시간 시간표를 찾고 계신가요? KTX, SRT, 무궁화호 출발시간, 요금, 예매 링크까지 한 번에 확인하세요. 서울역, 부산역, 대전역 등 주요 노선 완벽 커버">
+    <meta name="keywords" content="기차시간표,열차시간표,KTX시간표,SRT시간표,무궁화호시간표,실시간예매,기차요금,열차예약,첫차막차,전국기차역,코레일">
+    <meta name="author" content="레일가이드 - 대한민국 1위 열차시간표 서비스">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="created" content="2025-07-27">
+    <meta name="modified" content="2025-07-27">
+    <link rel="canonical" href="https://train.medilocator.co.kr">
+    
+    <!-- 지역 SEO 최적화 -->
+    <meta name="geo.region" content="KR">
+    <meta name="geo.placename" content="대한민국">
+    <meta name="geo.position" content="37.5665;126.9780">
+    <meta name="ICBM" content="37.5665, 126.9780">
+    
+    <!-- Open Graph 2025 최적화 -->
+    <meta property="og:title" content="레일가이드 - 전국 기차시간표 실시간 조회 | KTX SRT 무궁화호 완벽 가이드">
+    <meta property="og:description" content="122개 기차역 실시간 시간표 조회부터 온라인 예매까지! 서울역, 부산역, 대전역 등 전국 주요 노선의 KTX, SRT, 무궁화호 정보를 한눈에 확인하세요">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://train.medilocator.co.kr">
+    <meta property="og:image" content="https://train.medilocator.co.kr/img/ktx-seo-banner.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="전국 기차시간표 서비스 - KTX, SRT, 무궁화호 실시간 조회">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:site_name" content="레일가이드">
+
+    <!-- Twitter Card 최적화 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="전국 기차시간표 실시간 조회 | 122개역 완벽 가이드">
+    <meta name="twitter:description" content="KTX, SRT, 무궁화호 시간표부터 예매까지 한 번에! 전국 주요 기차역 완벽 커버">
+    <meta name="twitter:image" content="https://train.medilocator.co.kr/img/ktx-seo-banner.png">
+    <meta name="twitter:image:alt" content="전국 기차시간표 서비스">
+    
+    <!-- Google Fonts 프리로드 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    :root {
+        --primary-color: #1e40af;
+        --primary-light: #3b82f6;
+        --secondary-color: #059669;
+        --accent-color: #dc2626;
+        --text-primary: #1f2937;
+        --text-secondary: #6b7280;
+        --bg-primary: #ffffff;
+        --bg-secondary: #f8fafc;
+        --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --border-color: #e5e7eb;
+        --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --border-radius: 12px;
+        --spacing-xs: 0.5rem;
+        --spacing-sm: 1rem;
+        --spacing-md: 1.5rem;
+        --spacing-lg: 2rem;
+        --spacing-xl: 3rem;
+    }
+
+    body {
+        font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        line-height: 1.6;
+        color: var(--text-primary);
+        background: var(--bg-secondary);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .header {
+        text-align: center;
+        margin-bottom: var(--spacing-xl);
+        padding: var(--spacing-xl) var(--spacing-md);
+        background: var(--bg-gradient);
+        border-radius: var(--border-radius);
+        color: white;
+        box-shadow: var(--shadow-lg);
+    }
+
+    .header h1 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        font-weight: 700;
+        margin-bottom: var(--spacing-sm);
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .header .subtitle {
+        font-size: 1.1rem;
+        font-weight: 300;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+
+
+    .info-section {
+        background: var(--bg-primary);
+        padding: var(--spacing-lg);
+        border-radius: var(--border-radius);
+        margin-bottom: var(--spacing-xl);
+        box-shadow: var(--shadow-md);
+        border-left: 4px solid var(--primary-color);
+        text-align: center;
+    }
+
+    .info-section p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--text-secondary);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .info-section p:last-child {
+        margin-bottom: 0;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: var(--spacing-lg);
+        text-align: center;
+        position: relative;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 3px;
+        background: var(--primary-color);
+        border-radius: 2px;
+    }
+
+    .stations-list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .station-item {
+        background: var(--bg-primary);
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow-sm);
+        transform: translateY(0);
+    }
+
+    .station-item:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--primary-light);
+    }
+
+
+
+    .station-link {
+        display: block;
+        padding: var(--spacing-md) var(--spacing-lg);
+        text-decoration: none;
+        color: var(--text-primary);
+        position: relative;
+        font-size: 1.1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .station-link::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: var(--primary-color);
+        transform: scaleY(0);
+        transition: transform 0.3s ease;
+    }
+
+    .station-item:hover .station-link::before {
+        transform: scaleY(1);
+    }
+
+    .station-icon {
+        font-size: 1.3rem;
+        margin-right: var(--spacing-sm);
+        vertical-align: middle;
+    }
+
+    .station-name {
+        vertical-align: middle;
+    }
+
+    .station-link:hover {
+        background: linear-gradient(90deg, rgba(30, 64, 175, 0.05) 0%, transparent 100%);
+        color: var(--primary-color);
+    }
+
+    .major-station-item {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+        color: white;
+        border: none;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .major-station-item .station-link {
+        color: white;
+        font-weight: 600;
+        font-size: 1.2rem;
+        padding: var(--spacing-lg);
+    }
+
+    .major-station-item .station-link:hover {
+        background: rgba(255,255,255,0.1);
+        color: white;
+    }
+
+    .region-list {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .region-item {
+        background: linear-gradient(135deg, var(--secondary-color) 0%, #10b981 100%);
+        color: white;
+        border: none;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .region-item .station-link {
+        color: white;
+        font-weight: 600;
+        font-size: 1.15rem;
+        padding: var(--spacing-lg);
+    }
+
+    .region-item .station-link:hover {
+        background: rgba(255,255,255,0.15);
+        color: white;
+    }
+
+    .region-item::before {
+        background: rgba(255,255,255,0.3) !important;
+    }
+
+    .region-item:hover .station-link::before {
+        transform: scaleY(1);
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .stat-card {
+        background: var(--bg-primary);
+        padding: var(--spacing-lg);
+        border-radius: var(--border-radius);
+        text-align: center;
+        box-shadow: var(--shadow-md);
+        transition: transform 0.3s ease;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        display: block;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        margin-top: var(--spacing-xs);
+    }
+
+    .cta-section {
+        background: linear-gradient(135deg, var(--secondary-color) 0%, #10b981 100%);
+        color: white;
+        padding: var(--spacing-xl);
+        border-radius: var(--border-radius);
+        text-align: center;
+        margin-bottom: var(--spacing-xl);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .cta-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .cta-desc {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: var(--spacing-md);
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .cta-button {
+        background: rgba(255,255,255,0.2);
+        color: white;
+        padding: var(--spacing-sm) var(--spacing-lg);
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .cta-button:hover {
+        background: rgba(255,255,255,0.3);
+        border-color: rgba(255,255,255,0.5);
+        transform: translateY(-2px);
+    }
+
+    .footer {
+        margin-top: var(--spacing-xl);
+        padding: var(--spacing-lg);
+        text-align: center;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        background: var(--bg-primary);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .footer-links {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .footer-links a {
+        color: var(--primary-color);
+        text-decoration: none;
+        margin: 0 var(--spacing-sm);
+    }
+
+
+
+    @media (max-width: 768px) {
+        .container {
+            padding: var(--spacing-md) var(--spacing-sm);
+        }
+
+        .header {
+            padding: var(--spacing-lg) var(--spacing-sm);
+        }
+
+        .search-section {
+            position: static;
+        }
+
+        .station-link {
+            padding: var(--spacing-md);
+            font-size: 1rem;
+        }
+
+        .major-station-item .station-link {
+            padding: var(--spacing-md);
+            font-size: 1.1rem;
+        }
+
+        .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .cta-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .stats-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* 애니메이션 */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .station-item {
+        animation: fadeInUp 0.5s ease forwards;
+    }
+
+    .station-item:nth-child(n) {
+        animation-delay: calc(var(--i, 0) * 0.02s);
+    }
+
+
+
+    /* 스크롤바 스타일링 */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--bg-secondary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--border-color);
+        border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--text-secondary);
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🚄 전국 기차시간표 실시간 조회</h1>
+            <p class="subtitle">122개 주요 기차역의 KTX, SRT, 무궁화호 시간표와 예매 정보를 한눈에 확인하세요</p>
+        </header>
+
+
+
+        <div class="info-section">
+            <p>
+                🚄 <strong>전국 122개 주요 기차역</strong>에서 출발하는 <strong>KTX, SRT, 무궁화호</strong> 열차의 <strong>실시간 시간표</strong>를 찾고 계신가요?
+            </p>
+            <p>
+                아래 목록에서 원하시는 역을 선택하시면 <strong>첫차·막차 시간, 실시간 요금, 온라인 예매 링크</strong>까지 빠르게 확인할 수 있습니다.
+            </p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-number">122</span>
+                <span class="stat-label">전국 기차역</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">3</span>
+                <span class="stat-label">열차 종류</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">24</span>
+                <span class="stat-label">시간 서비스</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">실시간</span>
+                <span class="stat-label">업데이트</span>
+            </div>
+        </div>
+
+        <section>
+            <h2 class="section-title">🗺️ 권역별 열차시간표</h2>
+            <div class="stations-list region-list">
+                <div class="station-item region-item">
+                    <a href="/수도권에서-출발하는-열차시간표" class="station-link" aria-label="수도권 지역 열차시간표 보기">
+                        <span class="station-icon">🏙️</span>
+                        <span class="station-name">수도권 출발 열차시간표</span>
+                    </a>
+                </div>
+                <div class="station-item region-item">
+                    <a href="/충청권에서-출발하는-열차시간표" class="station-link" aria-label="충청권 지역 열차시간표 보기">
+                        <span class="station-icon">🏞️</span>
+                        <span class="station-name">충청권 출발 열차시간표</span>
+                    </a>
+                </div>
+                <div class="station-item region-item">
+                    <a href="/강원권에서-출발하는-열차시간표" class="station-link" aria-label="강원권 지역 열차시간표 보기">
+                        <span class="station-icon">⛰️</span>
+                        <span class="station-name">강원권 출발 열차시간표</span>
+                    </a>
+                </div>
+                <div class="station-item region-item">
+                    <a href="/전라권에서-출발하는-열차시간표" class="station-link" aria-label="전라권 지역 열차시간표 보기">
+                        <span class="station-icon">🌾</span>
+                        <span class="station-name">전라권 출발 열차시간표</span>
+                    </a>
+                </div>
+                <div class="station-item region-item">
+                    <a href="/경상권에서-출발하는-열차시간표" class="station-link" aria-label="경상권 지역 열차시간표 보기">
+                        <span class="station-icon">🏮</span>
+                        <span class="station-name">경상권 출발 열차시간표</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">🚉 전체 기차역 목록</h2>
+            <div class="stations-list" id="allStationsList">
+                <!-- 모든 역들이 여기에 들어갑니다 -->
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2 class="cta-title">🎫 지금 바로 기차표 예매하세요!</h2>
+            <p class="cta-desc">원하는 역의 시간표를 확인하신 후, 공식 예매 사이트에서 안전하게 예약하세요</p>
+            <div class="cta-buttons">
+                <a href="https://www.letskorail.com" class="cta-button" rel="noopener">코레일톡 예매</a>
+                <a href="https://etk.srail.kr" class="cta-button" rel="noopener">SRT 예매</a>
+                <a href="https://www.korail.com" class="cta-button" rel="noopener">코레일 홈페이지</a>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="/about">서비스 소개</a>
+                <a href="/열차시간표">전체 시간표</a>
+                <a href="/노선도">노선도</a>
+                <a href="/요금표">요금표</a>
+                <a href="/contact">문의하기</a>
+                <a href="/privacy">개인정보처리방침</a>
+                <a href="/terms">이용약관</a>
+            </div>
+            <p>© 2025 레일가이드. 대한민국 최고의 기차시간표 서비스</p>
+            <p>최신 업데이트: 2025년 7월 26일 | 실시간 시간표 정보 제공</p>
+            <p>문의: <a href="mailto:info@train.medilocator.co.kr">info@train.medilocator.co.kr</a>
+        </footer>
+    </div>
+
+    <script>
+        // 주요 역 목록 (사용되지 않지만 데이터 유지)
+        const majorStations = [
+            '서울역', '부산역', '대전역', '동대구역', '광명역', '수서역'
+        ];
+
+        // 전체 역 목록 데이터
+        const allStations = [
+            '강경역', '경주역', '계룡역', '곡성역', '공주역', '광명역', '광양역', '광주역', '광천역', '구례구역',
+            '구포역', '군북역', '극락강역', '기장역', '김천구미역', '김천역', '남성현역', '남원역', '남창역', '논산역',
+            '능곡역', '능주역', '다시역', '대곡역', '대구역', '대전역', '덕소역', '덕하역', '동대구역', '동탄역',
+            '동해역', '매곡역', '목포역', '몽탄역', '무안역', '물금역', '밀양역', '백양사역', '부산역', '부전역',
+            '북울산역', '사상역', '삼랑진역', '삼례역', '삼산역', '상봉역', '서경주역', '서광주역', '서대전역', '서울역',
+            '석불역', '성환역', '센텀역', '수서역', '수원역', '순천역', '신탄진역', '신태인역', '신해운대역', '아신역',
+            '안양역', '양동역', '양평역', '여수EXPO역', '여천역', '연산역', '영동역', '영등포역', '영천역', '영해역',
+            '예당역', '오산역', '오송역', '오수역', '옥수역', '완사역', '왕십리역', '용문역', '용산역', '울산(통도사)역',
+            '울진역', '원동역', '월포역', '이양역', '익산역', '일로역', '일신역', '임실역', '장사역', '장성역',
+            '전주역', '점촌역', '정읍역', '죽변역', '중리역', '지평역', '진상역', '진영역', '진주역', '진해역',
+            '창원역', '창원중앙역', '천안아산역', '천안역', '청도역', '청주역', '추풍령역', '충주역', '태화강역', '평택역', '평해역', '풍기역',
+            '하동역', '한림정역', '함안역', '함열역', '함평역', '행신역', '화명역', '화순역', '효문역', '효천역',
+            '후포역', '흑석리역'
+        ];
+
+        // 전체 역 렌더링 (모든 역 포함) - 한국어 URL 형태로 변경
+        // 전체 역 렌더링 (모든 역 포함) - 한국어 URL 형태로 변경
+        function renderAllStations() {
+            const container = document.getElementById('allStationsList');
+            
+            container.innerHTML = allStations.map((station, index) => {
+                // URL 경로는 전체 역명 사용 (예: 경주역에서-출발하는-열차시간표)
+                const urlPath = `/${station}에서-출발하는-열차시간표`;
+                
+                return `
+                <div class="station-item" style="--i: ${index}" data-station="${station}">
+                    <a href="${urlPath}" class="station-link" aria-label="${station} 출발 열차시간표 보기">
+                        <span class="station-icon">🚉</span>
+                        <span class="station-name">${station} 출발 열차시간표</span>
+                    </a>
+                </div>
+                `;
+            }).join('');
+        }
+
+        // 스크롤 이벤트로 애니메이션 최적화
+        function setupScrollAnimations() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // 모든 역 아이템에 observer 적용
+            document.querySelectorAll('.station-item').forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(item);
+            });
+        }
+
+        // 클릭 이벤트 추적 (분석용)
+        function setupAnalytics() {
+            document.querySelectorAll('.station-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const stationName = e.currentTarget.querySelector('.station-name').textContent;
+                    
+                    // Google Analytics 이벤트 전송 (gtag가 있을 경우)
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'station_click', {
+                            event_category: 'navigation',
+                            event_label: stationName,
+                            value: 1
+                        });
+                    }
+
+                    // 콘솔에 로그 (개발용)
+                    console.log('역 클릭:', stationName);
+                });
+            });
+        }
+
+
+
+        // 접근성: 키보드 네비게이션 지원
+        function setupAccessibility() {
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Tab') {
+                    document.body.classList.add('keyboard-navigation');
+                }
+            });
+
+            document.addEventListener('mousedown', () => {
+                document.body.classList.remove('keyboard-navigation');
+            });
+        }
+
+        // 페이지 로드 시 초기화
+        document.addEventListener('DOMContentLoaded', () => {
+            renderAllStations();
+            setupScrollAnimations();
+            setupAnalytics();
+            setupAccessibility();
+
+            // 성능 모니터링
+            if ('performance' in window) {
+                window.addEventListener('load', () => {
+                    const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+                    console.log(`페이지 로드 시간: ${loadTime}ms`);
+                    
+                    // 3초 이상 걸리면 성능 개선 필요
+                    if (loadTime > 3000) {
+                        console.warn('페이지 로드 시간이 느립니다. 성능 최적화가 필요합니다.');
+                    }
+                });
+            }
+
+            // 에러 핸들링
+            window.addEventListener('error', (e) => {
+                console.error('JavaScript 에러:', e.error);
+                
+                // 사용자에게 친화적인 에러 메시지 (선택사항)
+                // alert('일시적인 오류가 발생했습니다. 페이지를 새로고침해주세요.');
+            });
+
+            // 서비스 워커 등록 (PWA 기능)
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/sw.js')
+                        .then((registration) => {
+                            console.log('서비스 워커 등록 성공:', registration.scope);
+                        })
+                        .catch((error) => {
+                            console.log('서비스 워커 등록 실패:', error);
+                        });
+                });
+            }
+
+            // 사용자 행동 분석 (스크롤 깊이)
+            let maxScrollDepth = 0;
+            window.addEventListener('scroll', () => {
+                const scrollDepth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+                if (scrollDepth > maxScrollDepth) {
+                    maxScrollDepth = scrollDepth;
+                }
+            });
+
+            // 페이지 떠날 때 스크롤 깊이 기록
+            window.addEventListener('beforeunload', () => {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'scroll_depth', {
+                        event_category: 'engagement',
+                        value: maxScrollDepth
+                    });
+                }
+                console.log('최대 스크롤 깊이:', maxScrollDepth + '%');
+            });
+        });
+
+
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
+    <!-- 구조화된 데이터 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "전국 기차시간표 - 레일가이드",
+      "alternateName": "레일가이드",
+      "url": "https://train.medilocator.co.kr",
+      "description": "전국 122개 기차역 KTX SRT 무궁화호 실시간 열차시간표와 예매 서비스",
+      "inLanguage": "ko-KR",
+      "copyrightYear": "2025",
+      "author": {
+        "@type": "Organization",
+        "name": "레일가이드"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "레일가이드",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://train.medilocator.co.kr/img/logo.png"
+        }
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://train.medilocator.co.kr/{search_term_string}에서-출발하는-열차시간표",
+        "query-input": "required name=search_term_string"
+      },
+      "mainEntity": {
+        "@type": "Service",
+        "name": "기차시간표 조회 서비스",
+        "description": "전국 주요 기차역의 실시간 열차 시간표 제공",
+        "provider": {
+          "@type": "Organization",
+          "name": "레일가이드"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "대한민국"
+        }
+      }
+    }
+    </script>
+
+    <!-- FAQ 구조화 데이터 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "기차시간표를 실시간으로 확인할 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "네, 전국 122개 기차역의 KTX, SRT, 무궁화호 실시간 시간표를 24시간 언제든지 확인하실 수 있습니다."
+          }
+        },
+        {
+          "@type": "Question", 
+          "name": "어떤 기차 종류의 시간표를 볼 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "KTX, SRT, 무궁화호 등 모든 종류의 열차 시간표와 요금 정보를 제공합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "온라인 예매도 가능한가요?", 
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "각 역별 시간표 페이지에서 코레일톡, SRT 앱 등 공식 예매 사이트로 바로 연결됩니다."
+          }
+        }
+      ]
+    }
+    </script>
+</body>
+</html>
