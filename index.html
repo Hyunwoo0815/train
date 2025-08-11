@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>레일가이드 - 전국 열차 시간표</title>
+  <meta name="description" content="전국 모든 역의 KTX, SRT, ITX, 무궁화호 열차 시간표를 실시간으로 확인하세요.">
+  <style>
+    body { font-family: 'Noto Sans KR', sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+    h1 { color: #2c3e50; text-align: center; }
+    .station-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-top: 30px; }
+    .station-card { background: white; border: 1px solid #ddd; border-radius: 8px; padding: 15px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .station-card a { text-decoration: none; color: #2c3e50; font-weight: 500; }
+    .station-card:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
+  </style>
+</head>
+<body>
+  <h1>🚄 레일가이드 열차 시간표</h1>
+  <p style="text-align: center; color: #666;">전국 모든 역의 열차 시간표를 확인하세요</p>
+  <div class="station-grid" id="stationList">
+    <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #666;">
+      📊 역 목록을 로딩 중입니다...
+    </div>
+  </div>
+  <script>
+    // 생성된 HTML 파일들을 동적으로 로드해서 역 목록 생성
+    fetch('./meta.json')
+      .then(response => response.json())
+      .then(data => {
+        const stationList = document.getElementById('stationList');
+        stationList.innerHTML = '';
+        
+        Object.entries(data).forEach(([key, info]) => {
+          const stationCard = document.createElement('div');
+          stationCard.className = 'station-card';
+          stationCard.innerHTML = `
+            <a href="${key}">
+              <div>🚉 ${info.route.split(' → ')[0]}</div>
+              <small>${info.total_destinations}개 노선</small>
+            </a>
+          `;
+          stationList.appendChild(stationCard);
+        });
+      })
+      .catch(() => {
+        document.getElementById('stationList').innerHTML = 
+          '<div style="grid-column: 1 / -1; text-align: center; color: #666;">역 목록을 불러올 수 없습니다.</div>';
+      });
+  </script>
+</body>
+</html>
