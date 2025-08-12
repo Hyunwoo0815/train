@@ -197,43 +197,38 @@ jobs:
         if [ -f "meta.json.backup" ] && [ -f "meta.json" ]; then
           echo "📋 기존 meta.json 발행일 정보 복원 중..."
           
-          # 🔧 새로운 meta.json 구조에 맞게 수정
+          # jq로 발행일 정보 복사 (pages 구조에 맞게)
           if [ -s "meta.json.backup" ]; then
-            # 백업 파일에서 pages 정보 복원
-            python3 -c "
-import json
-import os
-
-try:
-    # 백업 파일 읽기
-    with open('meta.json.backup', 'r', encoding='utf-8') as f:
-        backup_data = json.load(f)
-    
-    # 현재 파일 읽기
-    with open('meta.json', 'r', encoding='utf-8') as f:
-        current_data = json.load(f)
-    
-    # pages 키가 있는 경우에만 복원
-    if 'pages' in backup_data and 'pages' in current_data:
-        # 백업에서 발행일 정보만 복원
-        for page_url, backup_page in backup_data['pages'].items():
-            if page_url in current_data['pages'] and 'published_date' in backup_page:
-                current_data['pages'][page_url]['published_date'] = backup_page['published_date']
-                print(f'발행일 복원: {page_url}')
-        
-        # 수정된 데이터 저장
-        with open('meta.json', 'w', encoding='utf-8') as f:
-            json.dump(current_data, f, ensure_ascii=False, indent=2)
-        
-        print('✅ 발행일 정보 복원 완료')
-    else:
-        print('ℹ️ 복원할 pages 정보 없음')
-
-except Exception as e:
-    print(f'⚠️ 발행일 정보 복원 실패: {e}')
-"
+            # 백업 파일에서 pages 정보가 있는지 확인
+            if jq -e '.pages' meta.json.backup > /dev/null 2>&1; then
+              echo "✅ 백업에서 pages 정보 발견"
+              
+              # 현재 파일에도 pages가 있는지 확인
+              if jq -e '.pages' meta.json > /dev/null 2>&1; then
+                echo "✅ 현재 파일에서도 pages 정보 발견"
+                
+                # 백업의 각 페이지에서 published_date만 복사
+                jq -r '.pages | keys[]' meta.json.backup | while read -r page_key; do
+                  published_date=$(jq -r ".pages[\"$page_key\"].published_date // empty" meta.json.backup)
+                  if [ ! -z "$published_date" ] && [ "$published_date" != "null" ]; then
+                    # 현재 파일에 해당 페이지가 있으면 published_date 복원
+                    if jq -e ".pages[\"$page_key\"]" meta.json > /dev/null 2>&1; then
+                      jq ".pages[\"$page_key\"].published_date = \"$published_date\"" meta.json > meta.json.tmp
+                      mv meta.json.tmp meta.json
+                      echo "✅ 발행일 복원: $page_key"
+                    fi
+                  fi
+                done
+                
+                echo "✅ 발행일 정보 복원 완료"
+              else
+                echo "ℹ️ 현재 파일에 pages 정보 없음"
+              fi
+            else
+              echo "ℹ️ 백업에 pages 정보 없음"
+            fi
           else
-            echo "ℹ️ 백업에 발행일 정보 없음"
+            echo "ℹ️ 백업 파일이 비어있음"
           fi
           
           # 백업 파일 정리
