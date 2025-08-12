@@ -87,7 +87,7 @@ jobs:
         INPUT_FOLDER: cache
         OUTPUT_FOLDER: .
         SITE_BASE_URL: https://train.medilocator.co.kr
-        USE_HTML_EXTENSION: ${{ github.event.inputs.use_html_extension || 'false' }}
+        USE_HTML_EXTENSION: ${{ github.event.inputs.use_html_extension || 'true' }}
         TARGET_STATION: ${{ github.event.inputs.target_station }}
         OVERWRITE_MODE: true
       run: |
