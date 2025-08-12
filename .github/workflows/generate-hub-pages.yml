@@ -6,7 +6,7 @@ on:
     branches: [ main ]
     paths:
       - 'cache/**'
-      - 'hub.py'
+      - 'make_html.py'  # 🔧 변경됨
       - '.github/workflows/**'
   
   # 수동 실행 가능
@@ -19,11 +19,23 @@ on:
       use_html_extension:
         description: 'HTML 확장자 사용'
         required: false
-        default: 'false'
+        default: 'true'  # 🔧 기본값 변경
         type: choice
         options:
         - 'true'
         - 'false'
+      max_days:
+        description: '생성할 일수 (1-14일)'
+        required: false
+        default: '7'
+        type: choice
+        options:
+        - '1'
+        - '3'
+        - '5'
+        - '7'
+        - '10'
+        - '14'
 
 jobs:
   generate-and-deploy:
@@ -41,8 +53,7 @@ jobs:
     - name: 📦 의존성 설치
       run: |
         pip install --upgrade pip
-        # 필요한 패키지가 있다면 여기에 추가
-        # pip install requests beautifulsoup4
+        pip install requests  # 🆕 추가: API 호출용
     
     - name: 📊 입력 데이터 확인
       run: |
@@ -54,6 +65,14 @@ jobs:
           ls cache/*.json 2>/dev/null | head -10 || echo "JSON 파일이 없습니다"
         else
           echo "❌ cache 폴더가 존재하지 않습니다"
+          exit 1
+        fi
+        
+        # station_list.json 확인
+        if [ -f "station_list.json" ]; then
+          echo "✅ station_list.json 존재함"
+        else
+          echo "❌ station_list.json이 없습니다"
           exit 1
         fi
     
@@ -75,6 +94,8 @@ jobs:
       run: |
         echo "🛡️ 중요 파일들 존재 확인:"
         echo "✓ hub.py: $([ -f "hub.py" ] && echo "존재" || echo "❌ 없음")"
+        echo "✓ make_html.py: $([ -f "make_html.py" ] && echo "존재" || echo "❌ 없음")"
+        echo "✓ station_list.json: $([ -f "station_list.json" ] && echo "존재" || echo "❌ 없음")"
         echo "✓ cache 폴더: $([ -d "cache" ] && echo "존재 ($(ls cache/*.json 2>/dev/null | wc -l)개 JSON)" || echo "❌ 없음")"
         echo "✓ .github 폴더: $([ -d ".github" ] && echo "존재" || echo "❌ 없음")"
         echo "✓ 기타 Python 파일들: $(find . -maxdepth 1 -name "*.py" | wc -l)개"
@@ -82,7 +103,7 @@ jobs:
         echo "📁 루트 폴더의 중요 파일들 (HTML 제외):"
         find . -maxdepth 1 -type f ! -name "*.html" ! -name ".*" | head -10
     
-    - name: 🚄 허브 페이지 생성 (덮어쓰기 모드)
+    - name: 🚄 허브 페이지 생성 (1단계)
       env:
         INPUT_FOLDER: cache
         OUTPUT_FOLDER: .
@@ -91,45 +112,126 @@ jobs:
         TARGET_STATION: ${{ github.event.inputs.target_station }}
         OVERWRITE_MODE: true
       run: |
-        echo "🚀 허브 페이지 생성 시작 (덮어쓰기 모드)"
+        echo "🚀 1단계: 허브 페이지 생성 시작"
         echo "📂 입력 폴더: $INPUT_FOLDER"
         echo "📁 출력 폴더: $OUTPUT_FOLDER (루트 폴더)"
         echo "🌐 사이트 URL: $SITE_BASE_URL"
         echo "🔧 HTML 확장자: $USE_HTML_EXTENSION"
         echo "🎯 대상 역: ${TARGET_STATION:-'전체'}"
-        echo "🔄 모드: 덮어쓰기 (기존 파일 유지 후 덮어씀)"
         echo ""
         
-        # 기존 HTML 파일 개수 확인
-        existing_files=$(find . -maxdepth 1 \( -name "*.html" -o -name "*역" -o -name "*시간표" \) -type f 2>/dev/null | wc -l)
-        if [ $existing_files -gt 0 ]; then
-          echo "📊 덮어쓸 기존 파일: ${existing_files}개"
+        # 기존 허브 페이지 확인
+        existing_hub_files=$(find . -maxdepth 1 -name "*역에서-출발하는-열차시간표*" 2>/dev/null | wc -l)
+        if [ $existing_hub_files -gt 0 ]; then
+          echo "📊 기존 허브 페이지: ${existing_hub_files}개"
         else
-          echo "📊 새로 생성될 파일들"
+          echo "📊 새로 생성될 허브 페이지들"
         fi
         
         python hub.py
+        
+        # 허브 페이지 생성 결과 확인
+        hub_files_after=$(find . -maxdepth 1 -name "*역에서-출발하는-열차시간표*" 2>/dev/null | wc -l)
+        echo "✅ 허브 페이지 생성 완료: ${hub_files_after}개"
+
+    - name: 🚆 열차시간표 페이지 생성 (2단계)
+      env:
+        INPUT_FOLDER: cache
+        OUTPUT_FOLDER: .
+        SITE_BASE_URL: https://train.medilocator.co.kr
+        USE_HTML_EXTENSION: ${{ github.event.inputs.use_html_extension || 'true' }}
+        TARGET_STATION: ${{ github.event.inputs.target_station }}
+        MAX_DAYS: 7  # 고정값으로 설정
+        OVERWRITE_MODE: true
+        STATION_LIST_PATH: station_list.json
+      run: |
+        echo "🚀 2단계: 열차시간표 페이지 생성 시작"
+        echo "📂 입력 폴더: $INPUT_FOLDER"
+        echo "📁 출력 폴더: $OUTPUT_FOLDER (루트 폴더)"
+        echo "🌐 사이트 URL: $SITE_BASE_URL"
+        echo "🔧 HTML 확장자: $USE_HTML_EXTENSION"
+        echo "🎯 대상 역: ${TARGET_STATION:-'전체'}"
+        echo "📅 생성 일수: 7일 (고정)"
+        echo "🔄 모드: 덮어쓰기 (기존 파일 유지 후 덮어씀)"
+        echo ""
+        
+        # 기존 시간표 파일 개수 확인
+        existing_schedule_files=$(find . -maxdepth 1 \( -name "*에서-*-가는-*시간표*" \) -type f 2>/dev/null | wc -l)
+        if [ $existing_schedule_files -gt 0 ]; then
+          echo "📊 기존 시간표 파일: ${existing_schedule_files}개"
+        else
+          echo "📊 새로 생성될 시간표 파일들"
+        fi
+        
+        python make_html.py
+        
+        # 시간표 페이지 생성 결과 확인
+        schedule_files_after=$(find . -maxdepth 1 \( -name "*에서-*-가는-*시간표*" \) -type f 2>/dev/null | wc -l)
+        echo "✅ 시간표 페이지 생성 완료: ${schedule_files_after}개"
     
     - name: 📋 생성 결과 확인 및 복원
       run: |
-        echo "🔍 생성된 파일 확인:"
-        total_files=$(find . -maxdepth 1 \( -name "*.html" -o -name "*역" -o -name "*시간표" \) -type f | wc -l)
-        echo "📊 총 HTML/시간표 파일 개수: ${total_files}개"
+        echo "🔍 전체 생성 결과 확인:"
+        
+        # 허브 페이지 개수 확인
+        hub_files=$(find . -maxdepth 1 -name "*역에서-출발하는-열차시간표*" 2>/dev/null | wc -l)
+        echo "📊 허브 페이지: ${hub_files}개"
+        
+        # 시간표 페이지 개수 확인  
+        schedule_files=$(find . -maxdepth 1 \( -name "*에서-*-가는-*시간표*" \) -type f | wc -l)
+        echo "📊 시간표 페이지: ${schedule_files}개"
+        
+        # 전체 HTML 파일 개수
+        total_files=$((hub_files + schedule_files))
+        echo "📊 총 HTML 파일: ${total_files}개"
         echo ""
-        echo "📋 생성/업데이트된 파일 목록 (처음 10개):"
-        find . -maxdepth 1 \( -name "*.html" -o -name "*역" -o -name "*시간표" \) -type f | head -10
+        
+        echo "📋 생성된 파일 목록 (각 카테고리별 5개씩):"
+        echo "--- 허브 페이지 ---"
+        find . -maxdepth 1 -name "*역에서-출발하는-열차시간표*" 2>/dev/null | head -5
+        echo "--- 시간표 페이지 ---"  
+        find . -maxdepth 1 \( -name "*에서-*-가는-*시간표*" \) -type f | head -5
         echo ""
         
         # meta.json 복원 (jq 사용)
         if [ -f "meta.json.backup" ] && [ -f "meta.json" ]; then
           echo "📋 기존 meta.json 발행일 정보 복원 중..."
           
-          # jq로 발행일 정보 복사
-          if jq -e '.published_date' meta.json.backup > /dev/null 2>&1; then
-            published_date=$(jq -r '.published_date' meta.json.backup)
-            jq --arg date "$published_date" '.published_date = $date' meta.json > meta.json.tmp
-            mv meta.json.tmp meta.json
-            echo "✅ 발행일 정보 복원 완료"
+          # 🔧 새로운 meta.json 구조에 맞게 수정
+          if [ -s "meta.json.backup" ]; then
+            # 백업 파일에서 pages 정보 복원
+            python3 -c "
+import json
+import os
+
+try:
+    # 백업 파일 읽기
+    with open('meta.json.backup', 'r', encoding='utf-8') as f:
+        backup_data = json.load(f)
+    
+    # 현재 파일 읽기
+    with open('meta.json', 'r', encoding='utf-8') as f:
+        current_data = json.load(f)
+    
+    # pages 키가 있는 경우에만 복원
+    if 'pages' in backup_data and 'pages' in current_data:
+        # 백업에서 발행일 정보만 복원
+        for page_url, backup_page in backup_data['pages'].items():
+            if page_url in current_data['pages'] and 'published_date' in backup_page:
+                current_data['pages'][page_url]['published_date'] = backup_page['published_date']
+                print(f'발행일 복원: {page_url}')
+        
+        # 수정된 데이터 저장
+        with open('meta.json', 'w', encoding='utf-8') as f:
+            json.dump(current_data, f, ensure_ascii=False, indent=2)
+        
+        print('✅ 발행일 정보 복원 완료')
+    else:
+        print('ℹ️ 복원할 pages 정보 없음')
+
+except Exception as e:
+    print(f'⚠️ 발행일 정보 복원 실패: {e}')
+"
           else
             echo "ℹ️ 백업에 발행일 정보 없음"
           fi
@@ -162,6 +264,14 @@ jobs:
             echo "❌ 경고: hub.py가 없습니다! 커밋을 중단합니다."
             exit 1
           fi
+          if [ ! -f "make_html.py" ]; then
+            echo "❌ 경고: make_html.py가 없습니다! 커밋을 중단합니다."
+            exit 1
+          fi
+          if [ ! -f "station_list.json" ]; then
+            echo "❌ 경고: station_list.json이 없습니다! 커밋을 중단합니다."
+            exit 1
+          fi
           if [ ! -d "cache" ]; then
             echo "❌ 경고: cache 폴더가 없습니다! 커밋을 중단합니다."
             exit 1
@@ -174,7 +284,13 @@ jobs:
           echo "✅ 모든 중요 파일 확인 완료"
           
           git add .
-          git commit -m "🚄 허브 페이지 자동 업데이트: $(date '+%Y-%m-%d %H:%M:%S KST')"
+          
+          # 생성된 파일 개수 계산
+          hub_count=$(find . -maxdepth 1 -name "*역에서-출발하는-열차시간표*" 2>/dev/null | wc -l)
+          schedule_count=$(find . -maxdepth 1 \( -name "*에서-*-가는-*시간표*" \) -type f | wc -l)
+          total_count=$((hub_count + schedule_count))
+          
+          git commit -m "🚄 페이지 자동 업데이트: $(date '+%Y-%m-%d %H:%M:%S KST') - 허브: ${hub_count}개, 시간표: ${schedule_count}개 (총 ${total_count}개)"
           git push origin main
           
           echo "🎉 리포지토리에 HTML 파일들 저장 완료!"
@@ -185,20 +301,49 @@ jobs:
     - name: 🎉 완료 알림
       if: success()
       run: |
-        echo "🎉 허브 페이지 생성 및 저장 완료!"
+        echo "🎉 모든 페이지 생성 및 저장 완료!"
         echo "📂 저장 위치: GitHub 리포지토리 main 브랜치"
-        echo "📊 총 페이지 수: $(find . -maxdepth 1 \( -name "*.html" -o -name "*역" -o -name "*시간표" \) -type f | wc -l)"
+        
+        # 각 페이지 유형별 개수 계산
+        hub_count=$(find . -maxdepth 1 -name "*역에서-출발하는-열차시간표*" 2>/dev/null | wc -l)
+        schedule_count=$(find . -maxdepth 1 \( -name "*에서-*-가는-*시간표*" \) -type f | wc -l)
+        total_count=$((hub_count + schedule_count))
+        
+        echo "📊 생성된 페이지 통계:"
+        echo "   🚄 허브 페이지: ${hub_count}개"
+        echo "   🚆 시간표 페이지: ${schedule_count}개"
+        echo "   📄 총 페이지: ${total_count}개"
         echo ""
         echo "🔄 덮어쓰기 모드 사용으로 모든 기존 파일 안전하게 보존"
         echo "🛡️ 보호된 중요 파일들:"
-        echo "   ✓ hub.py, cache/, .github/ 폴더 완전히 안전"
+        echo "   ✓ hub.py, make_html.py, station_list.json, cache/, .github/ 폴더 완전히 안전"
         echo "   ✓ 기존 HTML 파일들도 덮어쓰기만 수행"
         echo ""
         echo "🌐 GitHub Pages를 사용하려면:"
         echo "   Settings → Pages → Source: Deploy from a branch → main 브랜치 선택"
         echo ""
         echo "📁 리포지토리에서 직접 확인 가능한 파일들:"
-        find . -maxdepth 1 \( -name "*.html" -o -name "*역" -o -name "*시간표" \) -type f | head -5
+        echo "--- 허브 페이지 (처음 3개) ---"
+        find . -maxdepth 1 -name "*역에서-출발하는-열차시간표*" 2>/dev/null | head -3
+        echo "--- 시간표 페이지 (처음 3개) ---"
+        find . -maxdepth 1 \( -name "*에서-*-가는-*시간표*" \) -type f | head -3
+        echo ""
+        echo "📈 성능 통계:"
+        if [ ${total_count} -gt 0 ]; then
+          # 허브 페이지 통계
+          if [ ${hub_count} -gt 0 ]; then
+            hub_avg_size=$(find . -maxdepth 1 -name "*역에서-출발하는-열차시간표*" 2>/dev/null -exec du -b {} + | awk '{sum+=$1} END {if(NR>0) printf "%.1f KB", sum/NR/1024; else print "0 KB"}')
+            echo "   • 허브 페이지 평균 크기: ${hub_avg_size}"
+          fi
+          # 시간표 페이지 통계  
+          if [ ${schedule_count} -gt 0 ]; then
+            schedule_avg_size=$(find . -maxdepth 1 \( -name "*에서-*-가는-*시간표*" \) -type f -exec du -b {} + | awk '{sum+=$1} END {if(NR>0) printf "%.1f KB", sum/NR/1024; else print "0 KB"}')
+            echo "   • 시간표 페이지 평균 크기: ${schedule_avg_size}"
+          fi
+          # 전체 크기
+          total_size=$(find . -maxdepth 1 \( -name "*.html" \) -type f -exec du -b {} + | awk '{sum+=$1} END {printf "%.2f MB", sum/1024/1024}')
+          echo "   • 전체 HTML 크기: ${total_size}"
+        fi
     
     - name: ❌ 실패 시 디버그 정보
       if: failure()
@@ -210,10 +355,25 @@ jobs:
         echo "📄 hub.py 존재 여부:"
         ls -la hub.py 2>/dev/null || echo "hub.py 없음"
         echo ""
+        echo "📄 make_html.py 존재 여부:"
+        ls -la make_html.py 2>/dev/null || echo "make_html.py 없음"
+        echo ""
+        echo "📄 station_list.json 존재 여부:"
+        ls -la station_list.json 2>/dev/null || echo "station_list.json 없음"
+        echo ""
         echo "📂 cache 폴더 상태:"
         ls -la cache/ 2>/dev/null || echo "cache 폴더 없음"
         echo ""
         echo "🛡️ 중요 파일 보호 상태:"
         echo "hub.py: $([ -f "hub.py" ] && echo "안전" || echo "❌ 삭제됨")"
+        echo "make_html.py: $([ -f "make_html.py" ] && echo "안전" || echo "❌ 삭제됨")"
+        echo "station_list.json: $([ -f "station_list.json" ] && echo "안전" || echo "❌ 삭제됨")"
         echo "cache/: $([ -d "cache" ] && echo "안전" || echo "❌ 삭제됨")"
         echo ".github/: $([ -d ".github" ] && echo "안전" || echo "❌ 삭제됨")"
+        echo ""
+        echo "🔧 환경변수 확인:"
+        echo "INPUT_FOLDER: ${INPUT_FOLDER:-'설정안됨'}"
+        echo "OUTPUT_FOLDER: ${OUTPUT_FOLDER:-'설정안됨'}"
+        echo "TARGET_STATION: ${TARGET_STATION:-'전체'}"
+        echo "USE_HTML_EXTENSION: ${USE_HTML_EXTENSION:-'설정안됨'}"
+        echo "MAX_DAYS: 7일 (고정)"
