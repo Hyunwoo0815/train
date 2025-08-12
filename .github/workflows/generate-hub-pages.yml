@@ -141,7 +141,7 @@ jobs:
         SITE_BASE_URL: https://train.medilocator.co.kr
         USE_HTML_EXTENSION: ${{ github.event.inputs.use_html_extension || 'true' }}
         TARGET_STATION: ${{ github.event.inputs.target_station }}
-        MAX_DAYS: 7  # 고정값으로 설정
+        MAX_DAYS: 1  # 다음 날 하루만
         OVERWRITE_MODE: true
         STATION_LIST_PATH: station_list.json
       run: |
@@ -151,7 +151,7 @@ jobs:
         echo "🌐 사이트 URL: $SITE_BASE_URL"
         echo "🔧 HTML 확장자: $USE_HTML_EXTENSION"
         echo "🎯 대상 역: ${TARGET_STATION:-'전체'}"
-        echo "📅 생성 일수: 7일 (고정)"
+        echo "📅 생성 일수: 1일 (다음 날만)"
         echo "🔄 모드: 덮어쓰기 (기존 파일 유지 후 덮어씀)"
         echo ""
         
@@ -285,7 +285,7 @@ jobs:
           schedule_count=$(find . -maxdepth 1 \( -name "*에서-*-가는-*시간표*" \) -type f | wc -l)
           total_count=$((hub_count + schedule_count))
           
-          git commit -m "🚄 페이지 자동 업데이트: $(date '+%Y-%m-%d %H:%M:%S KST') - 허브: ${hub_count}개, 시간표: ${schedule_count}개 (총 ${total_count}개)"
+          git commit -m "🚄 페이지 자동 업데이트: $(date '+%Y-%m-%d %H:%M:%S KST') - 허브: ${hub_count}개, 시간표: ${schedule_count}개 (총 ${total_count}개) - 내일 시간표"
           git push origin main
           
           echo "🎉 리포지토리에 HTML 파일들 저장 완료!"
@@ -371,4 +371,4 @@ jobs:
         echo "OUTPUT_FOLDER: ${OUTPUT_FOLDER:-'설정안됨'}"
         echo "TARGET_STATION: ${TARGET_STATION:-'전체'}"
         echo "USE_HTML_EXTENSION: ${USE_HTML_EXTENSION:-'설정안됨'}"
-        echo "MAX_DAYS: 7일 (고정)"
+        echo "MAX_DAYS: 1일 (다음 날만)"
