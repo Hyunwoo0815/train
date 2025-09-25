@@ -1,18 +1,4 @@
 User-agent: *
 Allow: /
 
-# 불필요한 리소스 차단
-Disallow: /img/
-Disallow: /css/
-Disallow: /js/
-Disallow: /*.css$
-Disallow: /*.js$
-
-# 중복 URL 방지
-Disallow: /*?*
-
-# Sitemap
 Sitemap: https://train.medilocator.co.kr/sitemap.xml
-
-# 서버 보호
-Crawl-delay: 1
