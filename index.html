@@ -4,883 +4,348 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- 파비콘 최적화 -->
-    <link rel="icon" sizes="32x32" type="image/png" href="https://train.medilocator.co.kr/favicon-32x32.png">
-    <link rel="icon" sizes="16x16" type="image/png" href="https://train.medilocator.co.kr/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://train.medilocator.co.kr/apple-touch-icon.png">
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="favicon-32x32.png">
+    <link rel="icon" sizes="16x16" type="image/png" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <!-- SEO 메타데이터 강화 -->
+    <title>전국 KTX, SRT, 무궁화호 기차 시간표 출발역별 열차 운행정보 | 레일가이드</title>
+    <meta name="description" content="서울역, 부산역, 대전역, 천안아산역, 동대구역, 광주 송정역, 광명역, 청량리역, 강릉역 등 전국 89개 주요 기차역에서 출발하는 KTX, SRT, 무궁화호 열차 시간표를 확인하세요. 빠른 조회와 예매를 위한 안내 페이지입니다.">
+    <meta name="keywords" content="기차시간표,열차시간표,KTX시간표,SRT시간표,무궁화호시간표,실시간예매,기차요금,열차예약,첫차막차,전국기차역,코레일,서울역,부산역,대전역,천안역,동대구역,광주역,광명역,청량리역,강릉역">
+    <meta name="author" content="레일가이드">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="created" content="2025-07-28">
+    <meta name="modified" content="2025-10-06">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://train.medilocator.co.kr">
+    
+    <!-- 지역 SEO -->
+    <meta name="geo.region" content="KR">
+    <meta name="geo.country" content="Korea">
+    <meta name="geo.placename" content="대한민국">
+    <meta name="geo.position" content="37.5665;126.9780">
+    <meta name="ICBM" content="37.5665, 126.9780">
+    
+    <!-- 다국어 지원 -->
+    <link rel="alternate" hreflang="ko" href="https://train.medilocator.co.kr">
+    
+    <!-- 향상된 Open Graph -->
+    <meta property="og:title" content="전국 KTX, SRT, 무궁화호 기차 시간표 출발역별 열차 운행정보">
+    <meta property="og:description" content="서울역, 부산역, 대전역, 천안아산역, 동대구역, 광주 송정역, 광명역, 청량리역, 강릉역 등 전국 89개 주요 기차역에서 출발하는 KTX, SRT, 무궁화호 열차 시간표를 확인하세요. 빠른 조회와 예매를 위한 안내 페이지입니다.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://train.medilocator.co.kr">
+    <meta property="og:image" content="https://train.medilocator.co.kr/img/ktx-banner.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="전국 기차 시간표 서비스 - KTX, SRT, 무궁화호 실시간 조회">
+    <meta property="og:site_name" content="레일가이드">
+    <meta property="og:locale" content="ko_KR">
+
+    <!-- 향상된 Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="전국 KTX, SRT, 무궁화호 기차 시간표 출발역별 열차 운행정보">
+    <meta name="twitter:description" content="전국 89개 주요 기차역에서 출발하는 KTX, SRT, 무궁화호 시간표를 확인하세요.">
+    <meta name="twitter:image" content="https://train.medilocator.co.kr/img/ktx-banner.png">
+    <meta name="twitter:image:alt" content="전국 기차 시간표 서비스">
+    
+    <!-- 추가 SEO 메타태그 -->
+    <meta name="theme-color" content="#007bff">
+    <meta name="application-name" content="레일가이드">
+    <meta name="msapplication-TileColor" content="#007bff">
+    
+    <!-- 성능 최적화 - Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
     
     <!-- 구글 애드센스 -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6101143022477538"
      crossorigin="anonymous"></script>
     
-    <!-- SEO 메타태그 - 2025 AI 시대 최적화 -->
-    <title>레일가이드 - 대한민국 1위 열차시간표 서비스 | KTX SRT 무궁화호 </title>
-    <meta name="description" content="전국 기차역 실시간 시간표를 찾고 계신가요? KTX, SRT, 무궁화호 출발시간, 요금, 예매까지 한 번에 확인하세요.>
-    <meta name="keywords" content="기차시간표,열차시간표,KTX시간표,SRT시간표,무궁화호시간표,실시간예매,기차요금,열차예약,첫차막차,전국기차역,코레일">
-    <meta name="author" content="레일가이드 - 대한민국 1위 열차시간표 서비스">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="googlebot" content="index, follow">
-    <meta name="created" content="2025-07-27">
-    <meta name="modified" content="2025-07-27">
-    <link rel="canonical" href="https://train.medilocator.co.kr">
-    
-    <!-- 지역 SEO 최적화 -->
-    <meta name="geo.region" content="KR">
-    <meta name="geo.placename" content="대한민국">
-    <meta name="geo.position" content="37.5665;126.9780">
-    <meta name="ICBM" content="37.5665, 126.9780">
-    
-    <!-- Open Graph 2025 최적화 -->
-    <meta property="og:title" content="레일가이드 - 전국 기차시간표 실시간 조회 KTX SRT 무궁화호">
-    <meta property="og:description" content="전국 기차역 실시간 시간표를 찾고 계신가요? KTX, SRT, 무궁화호 출발시간, 요금, 예매까지 한 번에 확인하세요.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://train.medilocator.co.kr">
-    <meta property="og:image" content="https://train.medilocator.co.kr/img/ktx-seo-banner.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="전국 기차시간표 서비스 - KTX, SRT, 무궁화호 실시간 조회">
-    <meta property="og:locale" content="ko_KR">
-    <meta property="og:site_name" content="레일가이드">
-
-    <!-- Twitter Card 최적화 -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="전국 기차시간표 실시간 조회 | 122개역 완벽 가이드">
-    <meta name="twitter:description" content="KTX, SRT, 무궁화호 시간표부터 예매까지 한 번에! 전국 주요 기차역 완벽 커버">
-    <meta name="twitter:image" content="https://train.medilocator.co.kr/img/ktx-seo-banner.png">
-    <meta name="twitter:image:alt" content="전국 기차시간표 서비스">
-    
-    <!-- Google Fonts 프리로드 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 폰트 최적화 -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    
     <style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
-    :root {
-        --primary-color: #1e40af;
-        --primary-light: #3b82f6;
-        --secondary-color: #059669;
-        --accent-color: #dc2626;
-        --text-primary: #1f2937;
-        --text-secondary: #6b7280;
-        --bg-primary: #ffffff;
-        --bg-secondary: #f8fafc;
-        --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        --border-color: #e5e7eb;
-        --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        --border-radius: 12px;
-        --spacing-xs: 0.5rem;
-        --spacing-sm: 1rem;
-        --spacing-md: 1.5rem;
-        --spacing-lg: 2rem;
-        --spacing-xl: 3rem;
-    }
-
-    body {
-        font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        line-height: 1.6;
-        color: var(--text-primary);
-        background: var(--bg-secondary);
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
-
-    .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: var(--spacing-lg) var(--spacing-md);
-    }
-
-    .header {
-        text-align: center;
-        margin-bottom: var(--spacing-xl);
-        padding: var(--spacing-xl) var(--spacing-md);
-        background: var(--bg-gradient);
-        border-radius: var(--border-radius);
-        color: white;
-        box-shadow: var(--shadow-lg);
-    }
-
-    .header h1 {
-        font-size: clamp(1.8rem, 4vw, 2.5rem);
-        font-weight: 700;
-        margin-bottom: var(--spacing-sm);
-        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    }
-
-    .header .subtitle {
-        font-size: 1.1rem;
-        font-weight: 300;
-        opacity: 0.9;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
-    .info-section {
-        background: var(--bg-primary);
-        padding: var(--spacing-lg);
-        border-radius: var(--border-radius);
-        margin-bottom: var(--spacing-xl);
-        box-shadow: var(--shadow-md);
-        border-left: 4px solid var(--primary-color);
-        text-align: center;
-    }
-
-    .info-section p {
-        font-size: 1.05rem;
-        line-height: 1.7;
-        color: var(--text-secondary);
-        margin-bottom: var(--spacing-md);
-    }
-
-    .info-section p:last-child {
-        margin-bottom: 0;
-    }
-
-    .section-title {
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: var(--text-primary);
-        margin-bottom: var(--spacing-lg);
-        text-align: center;
-        position: relative;
-    }
-
-    .section-title::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 50px;
-        height: 3px;
-        background: var(--primary-color);
-        border-radius: 2px;
-    }
-
-    .stations-list {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-sm);
-        margin-bottom: var(--spacing-xl);
-    }
-
-    .station-item {
-        background: var(--bg-primary);
-        border: 1px solid var(--border-color);
-        border-radius: var(--border-radius);
-        overflow: hidden;
-        transition: all 0.3s ease;
-        box-shadow: var(--shadow-sm);
-        transform: translateY(0);
-    }
-
-    .station-item:hover {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-lg);
-        border-color: var(--primary-light);
-    }
-
-    .station-link {
-        display: block;
-        padding: var(--spacing-md) var(--spacing-lg);
-        text-decoration: none;
-        color: var(--text-primary);
-        position: relative;
-        font-size: 1.1rem;
-        font-weight: 500;
-        transition: all 0.3s ease;
-    }
-
-    .station-link::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 4px;
-        background: var(--primary-color);
-        transform: scaleY(0);
-        transition: transform 0.3s ease;
-    }
-
-    .station-item:hover .station-link::before {
-        transform: scaleY(1);
-    }
-
-    .station-icon {
-        font-size: 1.3rem;
-        margin-right: var(--spacing-sm);
-        vertical-align: middle;
-    }
-
-    .station-name {
-        vertical-align: middle;
-    }
-
-    .station-link:hover {
-        background: linear-gradient(90deg, rgba(30, 64, 175, 0.05) 0%, transparent 100%);
-        color: var(--primary-color);
-    }
-
-    .major-station-item {
-        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
-        color: white;
-        border: none;
-        margin-bottom: var(--spacing-md);
-    }
-
-    .major-station-item .station-link {
-        color: white;
-        font-weight: 600;
-        font-size: 1.2rem;
-        padding: var(--spacing-lg);
-    }
-
-    .major-station-item .station-link:hover {
-        background: rgba(255,255,255,0.1);
-        color: white;
-    }
-
-    .region-list {
-        margin-bottom: var(--spacing-xl);
-    }
-
-    .region-item {
-        background: linear-gradient(135deg, var(--secondary-color) 0%, #10b981 100%);
-        color: white;
-        border: none;
-        margin-bottom: var(--spacing-sm);
-    }
-
-    .region-item .station-link {
-        color: white;
-        font-weight: 600;
-        font-size: 1.15rem;
-        padding: var(--spacing-lg);
-    }
-
-    .region-item .station-link:hover {
-        background: rgba(255,255,255,0.15);
-        color: white;
-    }
-
-    .region-item::before {
-        background: rgba(255,255,255,0.3) !important;
-    }
-
-    .region-item:hover .station-link::before {
-        transform: scaleY(1);
-    }
-
-    .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: var(--spacing-md);
-        margin-bottom: var(--spacing-xl);
-    }
-
-    .stat-card {
-        background: var(--bg-primary);
-        padding: var(--spacing-lg);
-        border-radius: var(--border-radius);
-        text-align: center;
-        box-shadow: var(--shadow-md);
-        transition: transform 0.3s ease;
-    }
-
-    .stat-card:hover {
-        transform: translateY(-4px);
-    }
-
-    .stat-number {
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: var(--primary-color);
-        display: block;
-    }
-
-    .stat-label {
-        font-size: 0.9rem;
-        color: var(--text-secondary);
-        margin-top: var(--spacing-xs);
-    }
-
-    .cta-section {
-        background: linear-gradient(135deg, var(--secondary-color) 0%, #10b981 100%);
-        color: white;
-        padding: var(--spacing-xl);
-        border-radius: var(--border-radius);
-        text-align: center;
-        margin-bottom: var(--spacing-xl);
-        box-shadow: var(--shadow-lg);
-    }
-
-    .cta-title {
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin-bottom: var(--spacing-md);
-    }
-
-    .cta-desc {
-        font-size: 1.1rem;
-        opacity: 0.9;
-        margin-bottom: var(--spacing-lg);
-    }
-
-    .cta-buttons {
-        display: flex;
-        gap: var(--spacing-md);
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .cta-button {
-        background: rgba(255,255,255,0.2);
-        color: white;
-        padding: var(--spacing-sm) var(--spacing-lg);
-        border-radius: var(--border-radius);
-        text-decoration: none;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        border: 2px solid rgba(255,255,255,0.3);
-    }
-
-    .cta-button:hover {
-        background: rgba(255,255,255,0.3);
-        border-color: rgba(255,255,255,0.5);
-        transform: translateY(-2px);
-    }
-
-    .footer {
-        margin-top: var(--spacing-xl);
-        padding: var(--spacing-lg);
-        text-align: center;
-        color: var(--text-secondary);
-        font-size: 0.9rem;
-        background: var(--bg-primary);
-        border-radius: var(--border-radius);
-        box-shadow: var(--shadow-sm);
-    }
-
-    .footer-links {
-        margin-bottom: var(--spacing-md);
-        display: none; /* 사용하지 않는 링크들 숨김 */
-    }
-
-    @media (max-width: 768px) {
-        .container {
-            padding: var(--spacing-md) var(--spacing-sm);
+        body {
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            line-height: 1.7;
+            background-color: #f8f9fa;
+            color: #333;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        .header {
-            padding: var(--spacing-lg) var(--spacing-sm);
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 24px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .intro-text {
+            font-size: 18px;
+            margin-bottom: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid #007bff;
+        }
+
+        .station-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .station-item {
+            margin-bottom: 10px;
         }
 
         .station-link {
-            padding: var(--spacing-md);
-            font-size: 1rem;
-        }
-
-        .major-station-item .station-link {
-            padding: var(--spacing-md);
-            font-size: 1.1rem;
-        }
-
-        .stats-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .cta-buttons {
-            flex-direction: column;
+            display: flex;
             align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            background: #ffffff;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            color: #007bff;
+            font-weight: 500;
+            font-size: 18px;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
-    }
 
-    @media (max-width: 480px) {
-        .stats-grid {
-            grid-template-columns: 1fr;
+        .station-link:hover {
+            background: #f1f1f1;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            transform: translateY(-1px);
+            border-color: #007bff;
         }
-    }
+
+        .station-link:focus {
+            outline: 2px solid #007bff;
+            outline-offset: 2px;
+        }
+
+        .footer-info {
+            margin-top: 40px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .footer-links {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .intro-text {
+                font-size: 16px;
+                padding: 15px;
+            }
+
+            .station-link {
+                font-size: 16px;
+                padding: 10px 12px;
+            }
+        }
+
+        /* 접근성 개선 */
+        @media (prefers-reduced-motion: reduce) {
+            .station-link {
+                transition: none;
+            }
+            
+            .station-link:hover {
+                transform: none;
+            }
+        }
+
+        /* 다크모드 지원 */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1a1a1a;
+                color: #e0e0e0;
+            }
+            
+            .intro-text,
+            .station-link,
+            .footer-info {
+                background: #2d2d2d;
+                color: #e0e0e0;
+                border-color: #444;
+            }
+            
+            .station-link:hover {
+                background: #3d3d3d;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <h1>🚄 전국 기차시간표 실시간 조회</h1>
-            <p class="subtitle">122개 주요 기차역의 KTX, SRT, 무궁화호 시간표와 예매 정보를 한눈에 확인하세요</p>
-        </header>
-
-        <div class="info-section">
+    <header>
+        <h1>전국 출발역별 KTX SRT 무궁화호 열차 시간표</h1>
+    </header>
+    
+    <main>
+        <img src="img/ktx-banner.png" alt="KTX 고속열차 이미지" class="hero-image">
+        
+        <section class="intro-text">
             <p>
-                🚄 <strong>전국 122개 주요 기차역</strong>에서 출발하는 <strong>KTX, SRT, 무궁화호</strong> 열차의 <strong>실시간 시간표</strong>를 찾고 계신가요?
+            🚄 전국 주요 기차역에서 출발하는 <strong>KTX, SRT, 무궁화호</strong> 열차의 시간표를 한눈에 확인하세요.<br>
+            서울역, 부산역, 대전역, 천안아산역, 동대구역, 광주 송정역 등 다양한 출발역별로 정리된 안내 페이지를 통해,
+            <strong>열차 시간표, 요금, 예매 링크</strong>까지 빠르게 찾을 수 있습니다.
+            특히 출퇴근 시간대나 주말 이용객들을 위한 편리한 검색 환경을 제공하는 만큼 조회하기로 이동 후 최신 시간표 확인 하세요.
             </p>
-            <p>
-                아래 목록에서 원하시는 역을 선택하시면 <strong>첫차·막차 시간, 실시간 요금, 온라인 예매 링크</strong>까지 빠르게 확인할 수 있습니다.
-            </p>
+        </section>
+
+        <nav aria-label="기차역별 시간표 목록">
+            <ul class="station-list">
+                <li class="station-item"><a href="https://train.medilocator.co.kr/가평역에서-출발하는-열차시간표" class="station-link" aria-label="가평역 열차 시간표 조회">🚉 가평역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/강경역에서-출발하는-열차시간표" class="station-link" aria-label="강경역 열차 시간표 조회">🚉 강경역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/강릉역에서-출발하는-열차시간표" class="station-link" aria-label="강릉역 열차 시간표 조회">🚉 강릉역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/경산역에서-출발하는-열차시간표" class="station-link" aria-label="경산역 열차 시간표 조회">🚉 경산역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/경주역에서-출발하는-열차시간표" class="station-link" aria-label="경주역 열차 시간표 조회">🚉 경주역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/계룡역에서-출발하는-열차시간표" class="station-link" aria-label="계룡역 열차 시간표 조회">🚉 계룡역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/고래불역에서-출발하는-열차시간표" class="station-link" aria-label="고래불역 열차 시간표 조회">🚉 고래불역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/고한역에서-출발하는-열차시간표" class="station-link" aria-label="고한역 열차 시간표 조회">🚉 고한역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/곡성역에서-출발하는-열차시간표" class="station-link" aria-label="곡성역 열차 시간표 조회">🚉 곡성역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/공주역에서-출발하는-열차시간표" class="station-link" aria-label="공주역 열차 시간표 조회">🚉 공주역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/광명역에서-출발하는-열차시간표" class="station-link" aria-label="광명역 열차 시간표 조회">🚉 광명역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/광주송정역에서-출발하는-열차시간표" class="station-link" aria-label="광주송정역 열차 시간표 조회">🚉 광주송정역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/광주역에서-출발하는-열차시간표" class="station-link" aria-label="광주역 열차 시간표 조회">🚉 광주역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/구례구역에서-출발하는-열차시간표" class="station-link" aria-label="구례구역 열차 시간표 조회">🚉 구례구역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/구미역에서-출발하는-열차시간표" class="station-link" aria-label="구미역 열차 시간표 조회">🚉 구미역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/구포역에서-출발하는-열차시간표" class="station-link" aria-label="구포역 열차 시간표 조회">🚉 구포역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/군산역에서-출발하는-열차시간표" class="station-link" aria-label="군산역 열차 시간표 조회">🚉 군산역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/근덕역에서-출발하는-열차시간표" class="station-link" aria-label="근덕역 열차 시간표 조회">🚉 근덕역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/김천구미역에서-출발하는-열차시간표" class="station-link" aria-label="김천구미역 열차 시간표 조회">🚉 김천구미역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/나주역에서-출발하는-열차시간표" class="station-link" aria-label="나주역 열차 시간표 조회">🚉 나주역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/남원역에서-출발하는-열차시간표" class="station-link" aria-label="남원역 열차 시간표 조회">🚉 남원역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/단양역에서-출발하는-열차시간표" class="station-link" aria-label="단양역 열차 시간표 조회">🚉 단양역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/도고온천역에서-출발하는-열차시간표" class="station-link" aria-label="도고온천역 열차 시간표 조회">🚉 도고온천역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/동대구역에서-출발하는-열차시간표" class="station-link" aria-label="동대구역 열차 시간표 조회">🚉 동대구역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/동탄역에서-출발하는-열차시간표" class="station-link" aria-label="동탄역 열차 시간표 조회">🚉 동탄역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/동해역에서-출발하는-열차시간표" class="station-link" aria-label="동해역 열차 시간표 조회">🚉 동해역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/마산역에서-출발하는-열차시간표" class="station-link" aria-label="마산역 열차 시간표 조회">🚉 마산역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/목포역에서-출발하는-열차시간표" class="station-link" aria-label="목포역 열차 시간표 조회">🚉 목포역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/묵호역에서-출발하는-열차시간표" class="station-link" aria-label="묵호역 열차 시간표 조회">🚉 묵호역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/문산역에서-출발하는-열차시간표" class="station-link" aria-label="문산역 열차 시간표 조회">🚉 문산역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/밀양역에서-출발하는-열차시간표" class="station-link" aria-label="밀양역 열차 시간표 조회">🚉 밀양역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/부산역에서-출발하는-열차시간표" class="station-link" aria-label="부산역 열차 시간표 조회">🚉 부산역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/부전역에서-출발하는-열차시간표" class="station-link" aria-label="부전역 열차 시간표 조회">🚉 부전역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/북울산역에서-출발하는-열차시간표" class="station-link" aria-label="북울산역 열차 시간표 조회">🚉 북울산역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/삼랑진역에서-출발하는-열차시간표" class="station-link" aria-label="삼랑진역 열차 시간표 조회">🚉 삼랑진역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/삼척역에서-출발하는-열차시간표" class="station-link" aria-label="삼척역 열차 시간표 조회">🚉 삼척역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/삽교역에서-출발하는-열차시간표" class="station-link" aria-label="삽교역 열차 시간표 조회">🚉 삽교역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/서대구역에서-출발하는-열차시간표" class="station-link" aria-label="서대구역 열차 시간표 조회">🚉 서대구역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/서대전역에서-출발하는-열차시간표" class="station-link" aria-label="서대전역 열차 시간표 조회">🚉 서대전역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/서빙고역에서-출발하는-열차시간표" class="station-link" aria-label="서빙고역 열차 시간표 조회">🚉 서빙고역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/서울역에서-출발하는-열차시간표" class="station-link" aria-label="서울역 열차 시간표 조회">🚉 서울역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/서원주역에서-출발하는-열차시간표" class="station-link" aria-label="서원주역 열차 시간표 조회">🚉 서원주역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/센텀역에서-출발하는-열차시간표" class="station-link" aria-label="센텀역 열차 시간표 조회">🚉 센텀역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/수서역에서-출발하는-열차시간표" class="station-link" aria-label="수서역 열차 시간표 조회">🚉 수서역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/수원역에서-출발하는-열차시간표" class="station-link" aria-label="수원역 열차 시간표 조회">🚉 수원역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/순천역에서-출발하는-열차시간표" class="station-link" aria-label="순천역 열차 시간표 조회">🚉 순천역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/신례원역에서-출발하는-열차시간표" class="station-link" aria-label="신례원역 열차 시간표 조회">🚉 신례원역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/아산역에서-출발하는-열차시간표" class="station-link" aria-label="아산역 열차 시간표 조회">🚉 아산역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/안동역에서-출발하는-열차시간표" class="station-link" aria-label="안동역 열차 시간표 조회">🚉 안동역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/안양역에서-출발하는-열차시간표" class="station-link" aria-label="안양역 열차 시간표 조회">🚉 안양역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/안중역에서-출발하는-열차시간표" class="station-link" aria-label="안중역 열차 시간표 조회">🚉 안중역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/여수엑스포역에서-출발하는-열차시간표" class="station-link" aria-label="여수엑스포역 열차 시간표 조회">🚉 여수엑스포역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/여천역에서-출발하는-열차시간표" class="station-link" aria-label="여천역 열차 시간표 조회">🚉 여천역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/영덕역에서-출발하는-열차시간표" class="station-link" aria-label="영덕역 열차 시간표 조회">🚉 영덕역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/영동역에서-출발하는-열차시간표" class="station-link" aria-label="영동역 열차 시간표 조회">🚉 영동역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/영등포역에서-출발하는-열차시간표" class="station-link" aria-label="영등포역 열차 시간표 조회">🚉 영등포역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/영주역에서-출발하는-열차시간표" class="station-link" aria-label="영주역 열차 시간표 조회">🚉 영주역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/오근장역에서-출발하는-열차시간표" class="station-link" aria-label="오근장역 열차 시간표 조회">🚉 오근장역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/오송역에서-출발하는-열차시간표" class="station-link" aria-label="오송역 열차 시간표 조회">🚉 오송역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/옥천역에서-출발하는-열차시간표" class="station-link" aria-label="옥천역 열차 시간표 조회">🚉 옥천역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/온양온천역에서-출발하는-열차시간표" class="station-link" aria-label="온양온천역 열차 시간표 조회">🚉 온양온천역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/용산역에서-출발하는-열차시간표" class="station-link" aria-label="용산역 열차 시간표 조회">🚉 용산역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/운천역에서-출발하는-열차시간표" class="station-link" aria-label="운천역 열차 시간표 조회">🚉 운천역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/원주역에서-출발하는-열차시간표" class="station-link" aria-label="원주역 열차 시간표 조회">🚉 원주역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/음성역에서-출발하는-열차시간표" class="station-link" aria-label="음성역 열차 시간표 조회">🚉 음성역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/이원역에서-출발하는-열차시간표" class="station-link" aria-label="이원역 열차 시간표 조회">🚉 이원역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/익산역에서-출발하는-열차시간표" class="station-link" aria-label="익산역 열차 시간표 조회">🚉 익산역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/일산역에서-출발하는-열차시간표" class="station-link" aria-label="일산역 열차 시간표 조회">🚉 일산역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/임진강역에서-출발하는-열차시간표" class="station-link" aria-label="임진강역 열차 시간표 조회">🚉 임진강역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/전주역에서-출발하는-열차시간표" class="station-link" aria-label="전주역 열차 시간표 조회">🚉 전주역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/정동진역에서-출발하는-열차시간표" class="station-link" aria-label="정동진역 열차 시간표 조회">🚉 정동진역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/정읍역에서-출발하는-열차시간표" class="station-link" aria-label="정읍역 열차 시간표 조회">🚉 정읍역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/제천역에서-출발하는-열차시간표" class="station-link" aria-label="제천역 열차 시간표 조회">🚉 제천역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/증평역에서-출발하는-열차시간표" class="station-link" aria-label="증평역 열차 시간표 조회">🚉 증평역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/진주역에서-출발하는-열차시간표" class="station-link" aria-label="진주역 열차 시간표 조회">🚉 진주역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/창원역에서-출발하는-열차시간표" class="station-link" aria-label="창원역 열차 시간표 조회">🚉 창원역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/천안역에서-출발하는-열차시간표" class="station-link" aria-label="천안역 열차 시간표 조회">🚉 천안역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/청량리역에서-출발하는-열차시간표" class="station-link" aria-label="청량리역 열차 시간표 조회">🚉 청량리역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/청주역에서-출발하는-열차시간표" class="station-link" aria-label="청주역 열차 시간표 조회">🚉 청주역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/충주역에서-출발하는-열차시간표" class="station-link" aria-label="충주역 열차 시간표 조회">🚉 충주역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/탄현역에서-출발하는-열차시간표" class="station-link" aria-label="탄현역 열차 시간표 조회">🚉 탄현역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/태백역에서-출발하는-열차시간표" class="station-link" aria-label="태백역 열차 시간표 조회">🚉 태백역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/태화강역에서-출발하는-열차시간표" class="station-link" aria-label="태화강역 열차 시간표 조회">🚉 태화강역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/파주역에서-출발하는-열차시간표" class="station-link" aria-label="파주역 열차 시간표 조회">🚉 파주역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/평택역에서-출발하는-열차시간표" class="station-link" aria-label="평택역 열차 시간표 조회">🚉 평택역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/포항역에서-출발하는-열차시간표" class="station-link" aria-label="포항역 열차 시간표 조회">🚉 포항역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/홍성역에서-출발하는-열차시간표" class="station-link" aria-label="홍성역 열차 시간표 조회">🚉 홍성역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/황간역에서-출발하는-열차시간표" class="station-link" aria-label="황간역 열차 시간표 조회">🚉 황간역 열차 시간표 조회하기</a></li>
+                <li class="station-item"><a href="https://train.medilocator.co.kr/후포역에서-출발하는-열차시간표" class="station-link" aria-label="후포역 열차 시간표 조회">🚉 후포역 열차 시간표 조회하기</a></li>
+            </ul>
+        </nav>
+    </main>
+
+    <footer class="footer-info">
+        <div class="footer-links">
+            <a href="/about">서비스 소개</a>
+            <a href="/privacy">개인정보처리방침</a>
+            <a href="/terms">이용약관</a>
+            <a href="/contact">문의하기</a>
         </div>
+        <p>&copy; 2025 레일가이드. 모든 열차 시간표 정보는 참고용이며, 정확한 정보는 공식 사이트에서 확인하시기 바랍니다.</p>
+        <p>최종 업데이트: 2025년 10월 6일 | 전국 89개 기차역 시간표 제공</p>
+        <p>문의: <a href="mailto:info@train.medilocator.co.kr">info@train.medilocator.co.kr</a></p>
+    </footer>
 
-        <div class="stats-grid">
-            <div class="stat-card">
-                <span class="stat-number">122</span>
-                <span class="stat-label">전국 기차역</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-number">3</span>
-                <span class="stat-label">열차 종류</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-number">24</span>
-                <span class="stat-label">시간 서비스</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-number">실시간</span>
-                <span class="stat-label">업데이트</span>
-            </div>
-        </div>
-
-        <section>
-            <h2 class="section-title">🗺️ 권역별 열차시간표</h2>
-            <div class="stations-list region-list">
-                <div class="station-item region-item">
-                    <a href="https://train.medilocator.co.kr/수도권에서-출발하는-열차시간표" class="station-link" aria-label="수도권 지역 열차시간표 보기">
-                        <span class="station-icon">🏙️</span>
-                        <span class="station-name">수도권 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item region-item">
-                    <a href="https://train.medilocator.co.kr/충청권에서-출발하는-열차시간표" class="station-link" aria-label="충청권 지역 열차시간표 보기">
-                        <span class="station-icon">🏞️</span>
-                        <span class="station-name">충청권 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item region-item">
-                    <a href="https://train.medilocator.co.kr/강원권에서-출발하는-열차시간표" class="station-link" aria-label="강원권 지역 열차시간표 보기">
-                        <span class="station-icon">⛰️</span>
-                        <span class="station-name">강원권 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item region-item">
-                    <a href="https://train.medilocator.co.kr/전라권에서-출발하는-열차시간표" class="station-link" aria-label="전라권 지역 열차시간표 보기">
-                        <span class="station-icon">🌾</span>
-                        <span class="station-name">전라권 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item region-item">
-                    <a href="https://train.medilocator.co.kr/경상권에서-출발하는-열차시간표" class="station-link" aria-label="경상권 지역 열차시간표 보기">
-                        <span class="station-icon">🏮</span>
-                        <span class="station-name">경상권 출발 열차시간표</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2 class="section-title">🚉 전체 기차역 목록</h2>
-            <div class="stations-list">
-                <!-- 하드코딩된 모든 역 목록 - 가나다순(ㄱ-ㅎ) 정렬 -->
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/가평역에서-출발하는-열차시간표" class="station-link" aria-label="가평역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">가평역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/강경역에서-출발하는-열차시간표" class="station-link" aria-label="강경역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">강경역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/강릉역에서-출발하는-열차시간표" class="station-link" aria-label="강릉역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">강릉역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/경주역에서-출발하는-열차시간표" class="station-link" aria-label="경주역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">경주역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/계룡역에서-출발하는-열차시간표" class="station-link" aria-label="계룡역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">계룡역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/고래불역에서-출발하는-열차시간표" class="station-link" aria-label="고래불역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">고래불역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/고한역에서-출발하는-열차시간표" class="station-link" aria-label="고한역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">고한역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/곡성역에서-출발하는-열차시간표" class="station-link" aria-label="곡성역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">곡성역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/공주역에서-출발하는-열차시간표" class="station-link" aria-label="공주역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">공주역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/광명역에서-출발하는-열차시간표" class="station-link" aria-label="광명역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">광명역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/광양역에서-출발하는-열차시간표" class="station-link" aria-label="광양역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">광양역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/광주역에서-출발하는-열차시간표" class="station-link" aria-label="광주역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">광주역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/구미역에서-출발하는-열차시간표" class="station-link" aria-label="구미역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">구미역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/군산역에서-출발하는-열차시간표" class="station-link" aria-label="군산역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">군산역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/근덕역에서-출발하는-열차시간표" class="station-link" aria-label="근덕역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">근덕역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/김천구미역에서-출발하는-열차시간표" class="station-link" aria-label="김천구미역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">김천구미역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/남원역에서-출발하는-열차시간표" class="station-link" aria-label="남원역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">남원역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/단양역에서-출발하는-열차시간표" class="station-link" aria-label="단양역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">단양역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/대전역에서-출발하는-열차시간표" class="station-link" aria-label="대전역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">대전역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/도고온천역에서-출발하는-열차시간표" class="station-link" aria-label="도고온천역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">도고온천역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/동대구역에서-출발하는-열차시간표" class="station-link" aria-label="동대구역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">동대구역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/동해역에서-출발하는-열차시간표" class="station-link" aria-label="동해역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">동해역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/마산역에서-출발하는-열차시간표" class="station-link" aria-label="마산역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">마산역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/묵호역에서-출발하는-열차시간표" class="station-link" aria-label="묵호역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">묵호역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/북울산역에서-출발하는-열차시간표" class="station-link" aria-label="북울산역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">북울산역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/부산역에서-출발하는-열차시간표" class="station-link" aria-label="부산역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">부산역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/부전역에서-출발하는-열차시간표" class="station-link" aria-label="부전역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">부전역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/삼랑진역에서-출발하는-열차시간표" class="station-link" aria-label="삼랑진역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">삼랑진역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/삼척역에서-출발하는-열차시간표" class="station-link" aria-label="삼척역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">삼척역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/서대구역에서-출발하는-열차시간표" class="station-link" aria-label="서대구역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">서대구역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/서대전역에서-출발하는-열차시간표" class="station-link" aria-label="서대전역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">서대전역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/서울역에서-출발하는-열차시간표" class="station-link" aria-label="서울역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">서울역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/서원주역에서-출발하는-열차시간표" class="station-link" aria-label="서원주역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">서원주역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/수원역에서-출발하는-열차시간표" class="station-link" aria-label="수원역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">수원역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/신례원역에서-출발하는-열차시간표" class="station-link" aria-label="신례원역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">신례원역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/안동역에서-출발하는-열차시간표" class="station-link" aria-label="안동역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">안동역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/안양역에서-출발하는-열차시간표" class="station-link" aria-label="안양역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">안양역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/안중역에서-출발하는-열차시간표" class="station-link" aria-label="안중역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">안중역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/영동역에서-출발하는-열차시간표" class="station-link" aria-label="영동역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">영동역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/영등포역에서-출발하는-열차시간표" class="station-link" aria-label="영등포역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">영등포역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/영주역에서-출발하는-열차시간표" class="station-link" aria-label="영주역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">영주역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/오근장역에서-출발하는-열차시간표" class="station-link" aria-label="오근장역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">오근장역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/오송역에서-출발하는-열차시간표" class="station-link" aria-label="오송역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">오송역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/온양온천역에서-출발하는-열차시간표" class="station-link" aria-label="온양온천역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">온양온천역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/용산역에서-출발하는-열차시간표" class="station-link" aria-label="용산역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">용산역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/이원역에서-출발하는-열차시간표" class="station-link" aria-label="이원역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">이원역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/익산역에서-출발하는-열차시간표" class="station-link" aria-label="익산역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">익산역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/증평역에서-출발하는-열차시간표" class="station-link" aria-label="증평역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">증평역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/진주역에서-출발하는-열차시간표" class="station-link" aria-label="진주역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">진주역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/창원역에서-출발하는-열차시간표" class="station-link" aria-label="창원역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">창원역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/천안역에서-출발하는-열차시간표" class="station-link" aria-label="천안역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">천안역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/청량리역에서-출발하는-열차시간표" class="station-link" aria-label="청량리역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">청량리역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/청주역에서-출발하는-열차시간표" class="station-link" aria-label="청주역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">청주역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/충주역에서-출발하는-열차시간표" class="station-link" aria-label="충주역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">충주역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/태백역에서-출발하는-열차시간표" class="station-link" aria-label="태백역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">태백역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/태화강역에서-출발하는-열차시간표" class="station-link" aria-label="태화강역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">태화강역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/평택역에서-출발하는-열차시간표" class="station-link" aria-label="평택역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">평택역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/포항역에서-출발하는-열차시간표" class="station-link" aria-label="포항역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">포항역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/함평역에서-출발하는-열차시간표" class="station-link" aria-label="함평역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">함평역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/홍성역에서-출발하는-열차시간표" class="station-link" aria-label="홍성역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">홍성역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/황간역에서-출발하는-열차시간표" class="station-link" aria-label="황간역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">황간역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <div class="station-item">
-                    <a href="https://train.medilocator.co.kr/후포역에서-출발하는-열차시간표" class="station-link" aria-label="후포역 출발 열차시간표 보기">
-                        <span class="station-icon">🚉</span>
-                        <span class="station-name">후포역 출발 열차시간표</span>
-                    </a>
-                </div>
-                <!-- 나머지 111개 역도 동일한 패턴으로 하드코딩 -->
-                <!-- ... 실제로는 모든 122개 역을 이런 식으로 작성해야 함 -->
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <h2 class="cta-title">🎫 지금 바로 기차표 예매하세요!</h2>
-            <p class="cta-desc">원하는 역의 시간표를 확인하신 후, 공식 예매 사이트에서 안전하게 예약하세요</p>
-            <div class="cta-buttons">
-                <a href="https://www.letskorail.com" class="cta-button" rel="noopener">코레일톡 예매</a>
-                <a href="https://etk.srail.kr" class="cta-button" rel="noopener">SRT 예매</a>
-                <a href="https://www.korail.com" class="cta-button" rel="noopener">코레일 홈페이지</a>
-            </div>
-        </section>
-
-        <footer class="footer">
-            <p>© 2025 레일가이드. 대한민국 최고의 기차시간표 서비스</p>
-            <p>최신 업데이트: 2025년 7월 26일 | 실시간 시간표 정보 제공</p>
-            <p>문의: <a href="mailto:zipmail1117@naver.com">zipmail1117@naver.com</a></p>
-        </footer>
-    </div>
-
-    <!-- 구조화된 데이터 - 향상된 버전 -->
+    <!-- 확장된 구조화 데이터 -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -888,7 +353,7 @@
       "name": "전국 기차시간표 - 레일가이드",
       "alternateName": "레일가이드",
       "url": "https://train.medilocator.co.kr",
-      "description": "전국 122개 기차역 KTX SRT 무궁화호 실시간 열차시간표와 예매 서비스",
+      "description": "전국 89개 주요 기차역에서 출발하는 KTX, SRT, 무궁화호 열차 시간표를 실시간으로 조회할 수 있는 서비스입니다.",
       "inLanguage": "ko-KR",
       "copyrightYear": "2025",
       "author": {
@@ -901,18 +366,21 @@
         "name": "레일가이드",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://train.medilocator.co.kr/img/logo.png"
+          "url": "https://train.medilocator.co.kr/favicon.png"
         }
       },
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://train.medilocator.co.kr/{search_term_string}에서-출발하는-열차시간표",
-        "query-input": "required name=search_term_string"
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://train.medilocator.co.kr/{search_term}역에서-출발하는-열차시간표"
+        },
+        "query-input": "required name=search_term"
       },
       "mainEntity": {
         "@type": "Service",
-        "name": "기차시간표 조회 서비스",
-        "description": "전국 주요 기차역의 실시간 열차 시간표 제공",
+        "name": "전국 기차시간표 조회 서비스",
+        "description": "KTX, SRT, 무궁화호 등 전국 주요 기차역의 실시간 열차 시간표 제공",
         "provider": {
           "@type": "Organization",
           "name": "레일가이드"
@@ -922,423 +390,39 @@
           "name": "대한민국"
         },
         "serviceType": "교통정보서비스"
-      },
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "홈",
-            "item": "https://train.medilocator.co.kr"
-          }
-        ]
       }
     }
     </script>
 
-    <!-- ItemList 구조화 데이터 - 전체 역 목록 -->
+    <!-- 기차역 목록 구조화 데이터 -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ItemList",
       "name": "전국 기차역 시간표 목록",
-      "description": "전국 122개 기차역의 KTX, SRT, 무궁화호 열차 시간표",
-      "numberOfItems": 122,
+      "description": "전국 89개 주요 기차역에서 출발하는 열차 시간표 링크 모음",
+      "numberOfItems": 89,
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "가평역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/가평역에서-출발하는-열차시간표"
+          "name": "가평역 열차 시간표",
+          "url": "https://train.medilocator.co.kr/가평역에서-출발하는-열차시간표",
+          "description": "가평역에서 출발하는 KTX, SRT, 무궁화호 열차 시간표"
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "강경역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/강경역에서-출발하는-열차시간표"
+          "name": "강경역 열차 시간표",
+          "url": "https://train.medilocator.co.kr/강경역에서-출발하는-열차시간표",
+          "description": "강경역에서 출발하는 KTX, SRT, 무궁화호 열차 시간표"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "강릉역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/강릉역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem", 
-          "position": 4,
-          "name": "경주역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/경주역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 5,
-          "name": "계룡역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/계룡역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 6,
-          "name": "고래불역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/고래불역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 7,
-          "name": "고한역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/고한역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 8,
-          "name": "곡성역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/곡성역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 9,
-          "name": "공주역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/공주역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 10,
-          "name": "광명역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/광명역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 11,
-          "name": "광양역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/광양역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 12,
-          "name": "광주역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/광주역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 13,
-          "name": "구미역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/구미역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 14,
-          "name": "군산역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/군산역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 15,
-          "name": "근덕역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/근덕역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 16,
-          "name": "김천구미역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/김천구미역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 17,
-          "name": "남원역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/남원역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 18,
-          "name": "단양역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/단양역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 19,
-          "name": "대전역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/대전역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 20,
-          "name": "도고온천역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/도고온천역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 21,
-          "name": "동대구역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/동대구역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 22,
-          "name": "동해역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/동해역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 23,
-          "name": "마산역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/마산역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 24,
-          "name": "묵호역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/묵호역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 25,
-          "name": "북울산역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/북울산역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 26,
-          "name": "부산역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/부산역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 27,
-          "name": "부전역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/부전역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 28,
-          "name": "서울역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/서울역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 29,
-          "name": "서대구역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/서대구역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 30,
-          "name": "서대전역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/서대전역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 31,
-          "name": "서원주역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/서원주역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 32,
-          "name": "삼랑진역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/삼랑진역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 33,
-          "name": "삼척역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/삼척역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 34,
-          "name": "수원역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/수원역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 35,
-          "name": "신례원역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/신례원역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 36,
-          "name": "안동역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/안동역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 37,
-          "name": "안양역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/안양역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 38,
-          "name": "안중역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/안중역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 39,
-          "name": "영동역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/영동역에서-출발하는-열차시간표"
-        },
-        {
-          "@type": "ListItem",
-          "position": 40,
-          "name": "영등포역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/영등포역에서-출발하는-열차시간표"
-        }
-        ,
-        {
-          "@type": "ListItem",
-          "position": 41,
-          "name": "영주역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/영주역에서-출발하는-열차시간표"
-        }
-        ,
-        {
-          "@type": "ListItem",
-          "position": 42,
-          "name": "오근장역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/오근장역에서-출발하는-열차시간표"
-        }
-        ,
-        {
-          "@type": "ListItem",
-          "position": 43,
-          "name": "오송역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/오송역에서-출발하는-열차시간표"
-        }
-        ,
-        {
-          "@type": "ListItem",
-          "position": 44,
-          "name": "온양온천역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/온양온천역에서-출발하는-열차시간표"
-        }
-        ,
-        {
-          "@type": "ListItem",
-          "position": 45,
-          "name": "용산역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/용산역에서-출발하는-열차시간표"
-        }
-        ,
-        {
-          "@type": "ListItem",
-          "position": 46,
-          "name": "이원역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/이원역에서-출발하는-열차시간표"
-        }
-        ,
-        {
-          "@type": "ListItem",
-          "position": 47,
-          "name": "익산역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/익산역에서-출발하는-열차시간표"
-        }
-        ,
-        {
-          "@type": "ListItem",
-          "position": 48,
-          "name": "증평역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/증평역에서-출발하는-열차시간표"
-        }
-        ,
-        {
-          "@type": "ListItem",
-          "position": 49,
-          "name": "진주역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/진주역에서-출발하는-열차시간표"
-        }
-        ,
-        {
-          "@type": "ListItem",
-          "position": 50,
-          "name": "창원역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/창원역에서-출발하는-열차시간표"
-        }
-        ,
-        {
-          "@type": "ListItem",
-          "position": 51,
-          "name": "천안역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/천안역에서-출발하는-열차시간표"
-        }
-        ,
-        {
-          "@type": "ListItem",
-          "position": 52,
-          "name": "청량리역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/청량리역에서-출발하는-열차시간표"
-        }
-        ,
-        {
-          "@type": "ListItem",
-          "position": 53,
-          "name": "청주역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/청주역에서-출발하는-열차시간표"
-        }
-        ,
-        {
-          "@type": "ListItem",
-          "position": 54,
-          "name": "충주역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/충주역에서-출발하는-열차시간표"
-        }
-        ,
-        {
-          "@type": "ListItem",
-          "position": 55,
-          "name": "태백역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/태백역에서-출발하는-열차시간표"
-        }
-        ,
-        {
-          "@type": "ListItem",
-          "position": 56,
-          "name": "태화강역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/태화강역에서-출발하는-열차시간표"
-        }
-        ,
-        {
-          "@type": "ListItem",
-          "position": 57,
-          "name": "평택역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/평택역에서-출발하는-열차시간표"
-        }
-        ,
-        {
-          "@type": "ListItem",
-          "position": 58,
-          "name": "포항역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/포항역에서-출발하는-열차시간표"
-        }
-        ,
-        {
-          "@type": "ListItem",
-          "position": 59,
-          "name": "함평역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/함평역에서-출발하는-열차시간표"
-        }
-        ,
-        {
-          "@type": "ListItem",
-          "position": 60,
-          "name": "홍성역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/홍성역에서-출발하는-열차시간표"
-        }
-        ,
-        {
-          "@type": "ListItem",
-          "position": 61,
-          "name": "황간역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/황간역에서-출발하는-열차시간표"
-        }
-        ,
-        {
-          "@type": "ListItem",
-          "position": 62,
-          "name": "후포역 출발 열차시간표",
-          "url": "https://train.medilocator.co.kr/후포역에서-출발하는-열차시간표"
+          "name": "강릉역 열차 시간표",
+          "url": "https://train.medilocator.co.kr/강릉역에서-출발하는-열차시간표",
+          "description": "강릉역에서 출발하는 KTX, SRT, 무궁화호 열차 시간표"
         }
       ]
     }
@@ -1352,39 +436,38 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "기차시간표를 실시간으로 확인할 수 있나요?",
+          "name": "전국 몇 개의 기차역 시간표를 제공하나요?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "네, 전국 122개 기차역의 KTX, SRT, 무궁화호 실시간 시간표를 24시간 언제든지 확인하실 수 있습니다. 첫차와 막차 시간, 실시간 요금 정보까지 한 번에 제공됩니다."
-          }
-        },
-        {
-          "@type": "Question", 
-          "name": "어떤 기차 종류의 시간표를 볼 수 있나요?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "KTX(고속열차), SRT(수서고속철도), 무궁화호 등 모든 종류의 여객열차 시간표와 실시간 요금 정보를 제공합니다. 각 역별로 운행하는 모든 열차 정보를 확인할 수 있습니다."
+            "text": "전국 89개 주요 기차역에서 출발하는 KTX, SRT, 무궁화호 열차의 시간표를 제공합니다."
           }
         },
         {
           "@type": "Question",
-          "name": "온라인 예매도 가능한가요?", 
+          "name": "어떤 종류의 열차 시간표를 확인할 수 있나요?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "각 역별 시간표 페이지에서 코레일톡, SRT 모바일앱, 코레일 홈페이지 등 공식 예매 사이트로 바로 연결됩니다. 안전하고 편리한 온라인 예매가 가능합니다."
+            "text": "KTX, SRT, 무궁화호 등 모든 종류의 열차 시간표와 요금 정보를 확인하실 수 있습니다."
           }
         },
         {
           "@type": "Question",
-          "name": "전국 몇 개 기차역을 지원하나요?",
+          "name": "실시간으로 시간표가 업데이트되나요?",
           "acceptedAnswer": {
-            "@type": "Answer", 
-            "text": "전국 122개 주요 기차역을 지원합니다. 서울역, 부산역, 대전역 등 주요 거점역부터 지역의 소규모 역까지 모두 포함하여 전국 어디서든 이용할 수 있습니다."
+            "@type": "Answer",
+            "text": "네, 최신 열차 운행 정보를 반영하여 실시간으로 시간표 정보를 제공합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "열차 예매도 가능한가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "각 역별 시간표 페이지에서 코레일톡, SRT 등 공식 예매 사이트로 바로 연결됩니다."
           }
         }
       ]
     }
     </script>
 </body>
-
 </html>
