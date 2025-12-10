@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기차 예매 안내 - 할인정보 및 유의사항</title>
+    <meta name="description" content="기차 예매 전 확인해야 할 할인 정보, 카드 혜택, 환불 규정을 안내합니다.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+
+        /* 헤더 */
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        /* 선택 열차 정보 */
+        .train-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            margin: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .train-info h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .train-detail {
+            font-size: 18px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .train-detail strong {
+            font-size: 24px;
+        }
+
+        /* 섹션 공통 스타일 */
+        .section {
+            margin: 30px 20px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #1e3c72;
+            border-bottom: 3px solid #1e3c72;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* 탭 스타일 */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+            overflow-x: auto;
+        }
+
+        .tab-button {
+            padding: 12px 20px;
+            background: white;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            color: #666;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .tab-button:hover {
+            color: #1e3c72;
+        }
+
+        .tab-button.active {
+            color: #1e3c72;
+            border-bottom-color: #1e3c72;
+            font-weight: bold;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 할인 정보 박스 */
+        .discount-box {
+            background: #f8f9fa;
+            border-left: 4px solid #1e3c72;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .discount-box h3 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .discount-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .discount-box li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.8;
+        }
+
+        .discount-box li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #1e3c72;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .highlight {
+            color: #d32f2f;
+            font-weight: bold;
+        }
+
+        /* 경고 박스 */
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box h3 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+
+        .warning-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .warning-box li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.8;
+        }
+
+        .warning-box li:before {
+            content: "⚠️";
+            position: absolute;
+            left: 0;
+        }
+
+        /* 예매 버튼 */
+        .booking-section {
+            padding: 40px 20px;
+            text-align: center;
+            background: #f8f9fa;
+            margin-top: 40px;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: stretch;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .booking-button {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 20px;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            min-height: 100px;
+        }
+
+        .booking-button-discount {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .booking-button-discount:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+        }
+
+        .booking-button-direct {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+
+        .booking-button-direct:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(30, 60, 114, 0.5);
+        }
+
+        .button-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .button-title {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .button-subtitle {
+            font-size: 13px;
+            opacity: 0.9;
+            font-weight: normal;
+        }
+
+        .booking-note {
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background: #6c757d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .back-button:hover {
+            background: #5a6268;
+        }
+
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .tabs {
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .tab-button {
+                font-size: 14px;
+                padding: 10px 15px;
+            }
+
+            .button-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .booking-button {
+                width: 100%;
+                min-height: 90px;
+            }
+
+            .button-title {
+                font-size: 18px;
+            }
+
+            .button-icon {
+                font-size: 24px;
+            }
+
+            .section {
+                margin: 20px 15px;
+            }
+
+            .train-info {
+                margin: 15px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 뒤로가기 버튼 -->
+        <a href="javascript:history.back()" class="back-button">← 시간표로 돌아가기</a>
+
+        <!-- 헤더 -->
+        <div class="header">
+            <h1>🎫 기차 예매 전 필수 확인사항</h1>
+            <p>할인 혜택과 유의사항을 확인하고 예매하세요</p>
+        </div>
+
+        <!-- 선택한 열차 정보 -->
+        <div class="train-info">
+            <h2>🚄 예매 안내</h2>
+            <div class="train-detail">
+                📍 <span id="trainRoute">-</span>
+            </div>
+            <p style="margin-top: 15px; font-size: 16px; opacity: 0.95;">
+                아래 할인 정보를 확인하신 후 코레일에서 원하시는 열차를 선택해주세요
+            </p>
+        </div>
+
+        <!-- 할인제도 안내 -->
+        <div class="section">
+            <h2 class="section-title">📋 할인제도 안내</h2>
+            
+            <div class="tabs">
+                <button class="tab-button active" onclick="showTab('standing')">입석할인</button>
+                <button class="tab-button" onclick="showTab('free')">자유석할인</button>
+                <button class="tab-button" onclick="showTab('transfer')">환승할인</button>
+                <button class="tab-button" onclick="showTab('internet')">인터넷 특가</button>
+                <button class="tab-button" onclick="showTab('fourseats')">4인동반석</button>
+                <button class="tab-button" onclick="showTab('youth')">청소년 드림</button>
+                <button class="tab-button" onclick="showTab('young')">힘내라 청춘</button>
+                <button class="tab-button" onclick="showTab('family')">맘편한 코레일</button>
+                <button class="tab-button" onclick="showTab('multi')">다자녀 행복</button>
+                <button class="tab-button" onclick="showTab('public')">공공할인</button>
+            </div>
+
+            <!-- 입석할인 -->
+            <div id="standing" class="tab-content active">
+                <div class="discount-box">
+                    <h3>입석할인</h3>
+                    <ul>
+                        <li>(입석승차권) 이용하고자 하는 구간의 좌석이 모두 판매된 경우 고객의 이용동의를 받아 좌석을 지정하지 않고 발매하는 승차권입니다.</li>
+                        <li>입석 운임은 일반실 좌석운임의 <span class="highlight">15%를 할인</span>합니다.</li>
+                        <li>입석 이용 시 해당 호차에 승차해야 하며, 입석 승차권은 전화반환, 분실재발매, 전달하기가 불가합니다.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 자유석할인 -->
+            <div id="free" class="tab-content">
+                <div class="discount-box">
+                    <h3>자유석할인</h3>
+                    <ul>
+                        <li>(자유석승차권) 월~금요일(공휴일 제외) 출퇴근시간대 자유석 운영 객실을 이용할 수 있으며, 좌석을 지정하지 않는 승차권입니다.</li>
+                        <li>자유석 객실에는 정기승차권 소지 고객도 함께 승차할 수 있으며, 이용객이 많은 일부 열차는 입석으로 이용할 수 있습니다.</li>
+                        <li>자유석 운임은 일반실 좌석운임의 <span class="highlight">5%를 할인</span>합니다.</li>
+                        <li>자유석 이용 시 해당 호차에 승차해야 하며, 자유석 승차권은 전화반환, 분실재발매, 전달하기가 불가합니다.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 환승할인 -->
+            <div id="transfer" class="tab-content">
+                <div class="discount-box">
+                    <h3>환승할인</h3>
+                    <ul>
+                        <li>KTX가 정차하지 않는 역으로 여행하는 고객을 위한 할인제도입니다.</li>
+                        <li><span class="highlight">KTX와 일반열차(ITX-새마을, 새마을호, 무궁화호)를 상호 갈아타고 여행하는 경우</span> '일반열차 운임의 30%에 해당하는 운임을 할인' 하여 드립니다.</li>
+                        <li>환승할인은 <span class="highlight">10분~50분이내에 출발</span> 하는 열차로 환승시 적용됩니다.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 인터넷 특가 -->
+            <div id="internet" class="tab-content">
+                <div class="discount-box">
+                    <h3>할인대상</h3>
+                    <ul>
+                        <li>모든 KTX 이용객</li>
+                    </ul>
+                </div>
+
+                <div class="discount-box">
+                    <h3>할인율</h3>
+                    <ul>
+                        <li>KTX 열차별 승차율에 따라 <span class="highlight">10~30%까지 할인</span></li>
+                        <li>회원구분 이외에 <span class="highlight">다른 할인과 중복 적용없음</span></li>
+                        <li>최저운임 이하로 할인하지 않음</li>
+                        <li>할인은 운임에만 적용하고 요금은 미적용 (특실/우등실은 운임+요금으로 구분)</li>
+                    </ul>
+                </div>
+
+                <div class="discount-box">
+                    <h3>이용방법</h3>
+                    <ul>
+                        <li>출발 2 일전까지 <span class="highlight">홈페이지, 코레일톡</span>으로 할인대상열차 구매시 할인 가능</li>
+                        <li>할인이 적용된 승차권을 역 창구(고객센터)에서 변경시 할인 취소</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 4인동반석 -->
+            <div id="fourseats" class="tab-content">
+                <div class="discount-box">
+                    <h3>할인대상</h3>
+                    <ul>
+                        <li>코레일멤버십 회원 누구나</li>
+                    </ul>
+                </div>
+
+                <div class="discount-box">
+                    <h3>할인율</h3>
+                    <ul>
+                        <li>코레일톡 및 홈페이지에서 구매 시 열차별 승차율 및 예매시점에 따라 어른은 <span class="highlight">15~35%까지 할인</span>되며, 어린이 또는 유아가 함께 이용할 경우 어린이(6세~13세 미만)는 어린이 할인, 유아(6세 미만)는 동반 유아 좌석 지정 할인이 적용됩니다.</li>
+                    </ul>
+                </div>
+
+                <div class="discount-box">
+                    <h3>이용방법</h3>
+                    <ul>
+                        <li>4인 동반석의 동반 유아 좌석 지정 할인은 1세트(SET) 당 2명으로 제한됩니다.</li>
+                        <li>4인 동반석은 KTX, KTX-산천 열차의 마주보고 앉아가는 4인 동반석을 4인(4좌석)이 이용하는 경우 한 장의 승차권(1세트)으로 판매하며, 1회 1세트, 열차당 최대 2세트까지 구입 가능합니다.</li>
+                        <li><span class="highlight">구매한 동반석 세트 승차권과 다른 조건(인원수, 연령)검에도 해당 세트 승차권을 이용하여 승차하는 경우 부정승차로서 할인금액 최소 및 10배이내의 부가운임을 수수하므로, 조건 변경 시에는 해당 세트 상차권을 반환하고 새로운 조건에 맞는 승차권으로 구매하여야 합니다.</span></li>
+                        <li>코레일톡 및 코레일 홈페이지에서 구입한 승차권을 역 창구에서 변경 시 할인이 취소될 수 있습니다.</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <h3>유의사항</h3>
+                    <ul>
+                        <li>철도공사에서 정한 <span class="highlight">명절 특별 수송기간</span>에는 운영하지 않습니다.</li>
+                        <li>4인 동반석 할인은 열차별 승차율 및 예매시점에 따라 운영되며, 고객이 원하는 시간대에 할인열차가 운영되지 않거나, 할인율이 시간 공지 없이 변경될 수 있으며, 열차 출발 24시간 전부터 날짜의 승차권으로 판매됩니다.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 청소년 드림 -->
+            <div id="youth" class="tab-content">
+                <div class="discount-box">
+                    <h3>청소년 드림 할인</h3>
+                    <ul>
+                        <li>대상: 만 13세 이상 ~ 만 25세 이하 청소년</li>
+                        <li>할인율: <span class="highlight">KTX 운임 30% 할인</span></li>
+                        <li>평일/주말 관계없이 적용</li>
+                        <li>청소년 확인을 위한 신분증 지참 필수</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 힘내라 청춘 -->
+            <div id="young" class="tab-content">
+                <div class="discount-box">
+                    <h3>힘내라 청춘 할인</h3>
+                    <ul>
+                        <li>대상: 만 26세 이상 ~ 만 34세 이하 청년</li>
+                        <li>할인율: <span class="highlight">평일 30% 할인</span></li>
+                        <li>적용: 월~목요일 (공휴일 제외)</li>
+                        <li>신분증 지참 필수</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 맘편한 코레일 -->
+            <div id="family" class="tab-content">
+                <div class="discount-box">
+                    <h3>할인대상</h3>
+                    <ul>
+                        <li>코레일멤버십 회원 중 임산부, <span class="highlight">임산부와 함께 동행하는 동반인 1명(임산부 동행 없이 동반인 단독 승차 불가)</span></li>
+                        <li>정부24(https://www.gov.kr) 홈페이지 맘편한임신 원스톱서비스를 통해 온라인 신청가능(마이페이지/할인등록서비스 내역 참조)</li>
+                        <li>역 창구에서 임신확인서(또는 임신진단서_사본 가능), 신분증(주민등록증, 운전면허증, 여권 등)을 제시하고 등록 → 머리 등록도 가능</li>
+                        <li>할인기간은 출산예정일+1년까지 가능(출산이후 1년이내 만땀한 코레일 이용등록 시에는 가족관계증명서, 주민등록등본 등 관공서에서 발급한 서류의 출생일을 출산예정일로 간주함)</li>
+                    </ul>
+                </div>
+
+                <div class="discount-box">
+                    <h3>할인율</h3>
+                    <ul>
+                        <li>KTX 특/우등실 요금 면제(일반실 가격으로 제공)</li>
+                        <li>KTX 일반실 운임 40% 할인</li>
+                        <li>일반열차 운임 40% 할인(새마을, ITX-새마을, ITX-마음, 무궁화호, 누리로, ITX-청춘)</li>
+                        <li>다른 할인과 중복 적용 없음, 동반인이 어린이, 동반유아일 경우 어린이, 동반유아 할인 적용, 최저운임 이하 할인 없음</li>
+                    </ul>
+                </div>
+
+                <div class="discount-box">
+                    <h3>이용방법</h3>
+                    <ul>
+                        <li>열차출발 1개월전부터 20분전까지 홈페이지, 코레일톡, 역창구에서 할인대상열차 구매 시 할인 가능</li>
+                        <li>할인이 적용된 승차권을 역 창구(고객센터)에서 변경시 할인 취소</li>
+                        <li>구입한 본인과 동반인 1명에 한하여 이용 가능(승차시 신분증 제시), 1인 1회 2매, 1일 2차, 1개월 8회 이용 가능</li>
+                        <li>할인승차권을 다른 사람이 이용하는 경우 할인금액 회수 및 추가로 부가운임을 수수하며, 할인승차권을 다른 사람에게 제공한 회원은 할인자격 정지</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 다자녀 행복 -->
+            <div id="multi" class="tab-content">
+                <div class="discount-box">
+                    <h3>할인대상</h3>
+                    <ul>
+                        <li>코레일멤버십 회원 중 25세 미만 자녀 2명 이상을 둔 회원</li>
+                        <li>[다자녀행복 가족정보 인증하기]에서 부모 중 1명의 회원번호로 접속하여 인증 절차를 진행하여 주시기 바랍니다.</li>
+                        <li>다자녀 가정 인증 절차가 완료된 경우, 별도 증빙서류 제출 또는 역방문 없이 '다자녀 행복' 할인승차권 구매가 가능합니다.</li>
+                        <li>다만, 다자녀행복 가족정보 온라인에서 인증이 되지 않은 경우(가족구성원이 주소를 달리하거나, 주민등록등본상 표시되지 않을 경우 등)는 가까운 읍면동 행정복지센터를 방문하여 출산바비스 통합처리 신청서를 통해 신청하여 주시기 바랍니다.</li>
+                    </ul>
+                </div>
+
+                <div class="discount-box">
+                    <h3>할인율</h3>
+                    <ul>
+                        <li>열차별 승차율에 따라 동록 가족 중 최소 3명이상(어른 1명 포함)이 이용하여야 하며, KTX열차 승차 시 2자녀 가정은 30%, 3자녀 가정은 50% 운임을 할인합니다.</li>
+                        <li>다른 할인과 중복 적용없음</li>
+                        <li>최저운임 이하로 할인하지 않음</li>
+                        <li>할인은 운임에만 적용하고 요금은 미적용</li>
+                        <li><span class="highlight">(특실/우등실은 운임, 요금으로 구분)</span></li>
+                    </ul>
+                </div>
+
+                <div class="discount-box">
+                    <h3>이용방법</h3>
+                    <ul>
+                        <li>열차출발 1개월전부터 20분전까지 홈페이지, 코레일톡, 역창구에서 할인대상열차 구매 시 할인 가능</li>
+                        <li>할인이 적용된 승차권을 역 창구(고객센터)에서 변경시 할인 취소</li>
+                        <li>1개월 8회 이용 가능</li>
+                        <li>등록된 가족 이외에 다른 사람이 이용하는 경우 할인금액 회수 및 추가로 부가운임을 수수하며, 할인승차권을 다른 사람에게 제공한 회원은 할인자격 정지</li>
+                        <li>역창구에서 다른 승차권으로 변경되지 않으면 환불 신청 후 재구매하야 함</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 공공할인 -->
+            <div id="public" class="tab-content">
+                <div class="discount-box">
+                    <h3>경로우대</h3>
+                    <ul>
+                        <li>대상: 만 65세 이상</li>
+                        <li>할인율: <span class="highlight">30% 할인</span></li>
+                        <li>신분증 필수 지참</li>
+                    </ul>
+                </div>
+
+                <div class="discount-box">
+                    <h3>장애인 할인</h3>
+                    <ul>
+                        <li>중증 장애인(1~3급): <span class="highlight">50% 할인</span></li>
+                        <li>경증 장애인(4~6급): <span class="highlight">30% 할인</span></li>
+                        <li>장애인복지카드 또는 증명서 필수</li>
+                        <li>중증 장애인 보호자 1인도 동일 할인 적용</li>
+                    </ul>
+                </div>
+
+                <div class="discount-box">
+                    <h3>기차누리</h3>
+                    <ul>
+                        <li>대상: 기초생활수급자, 차상위계층</li>
+                        <li>할인율: <span class="highlight">30% 할인</span></li>
+                        <li>해당 증명서 필수</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 예매 버튼 섹션 -->
+        <div class="booking-section">
+            <div class="button-container">
+                <a href="#" id="bookingLinkDiscount" class="booking-button booking-button-discount" target="_blank" rel="noopener noreferrer">
+                    <div class="button-icon">💰</div>
+                    <div class="button-title">할인받고 예매하기</div>
+                    <div class="button-subtitle">(청소년, 경로, 장애인 등)</div>
+                </a>
+
+                <a href="#" id="bookingLinkDirect" class="booking-button booking-button-direct" target="_blank" rel="noopener noreferrer">
+                    <div class="button-icon">🚀</div>
+                    <div class="button-title">바로 예매하기</div>
+                    <div class="button-subtitle">(비할인 대상)</div>
+                </a>
+            </div>
+            <p class="booking-note">
+                ※ 위 할인 정보는 참고용이며, 실제 적용 여부는 예매 시 확인하세요
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // URL 파라미터에서 열차 정보 읽기
+        function loadTrainInfo() {
+            const params = new URLSearchParams(window.location.search);
+            
+            const from = params.get('from') || '-';
+            const to = params.get('to') || '-';
+            
+            // 출발지 → 도착지만 표시
+            document.getElementById('trainRoute').textContent = `${from} → ${to}`;
+            
+            // 코레일 예매 링크 생성
+            const korailUrl = `https://www.letskorail.com/ebizprd/prdMain.do`;
+            document.getElementById('bookingLinkDiscount').href = korailUrl;
+            document.getElementById('bookingLinkDirect').href = korailUrl;
+        }
+
+        // 탭 전환 함수
+        function showTab(tabId) {
+            // 모든 탭 콘텐츠 숨기기
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // 모든 탭 버튼 비활성화
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // 선택한 탭 활성화
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // 페이지 로드 시 실행
+        window.addEventListener('DOMContentLoaded', loadTrainInfo);
+    </script>
+</body>
+</html>
